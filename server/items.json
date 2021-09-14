@@ -1,0 +1,357 @@
+
+[
+  
+  {
+    "id": "504",
+    "candidate_id": "201",
+    "testeeName": "Marcia Danai  Muchuchu",
+    "testName": "VERBAL REASONING VEREA 1.O",
+    "attempts": "49 of 50",
+    "score": 34,
+    "percentile": "71",
+    "sten": "7",
+    "date_taken": "Dec 10th, 2020"
+  },
+  {
+    "id": "505",
+    "candidate_id": "201",
+    "testeeName": "Marcia Danai  Muchuchu",
+    "testName": "NUMERICAL REASONING TEST   NUREA 1.0",
+    "attempts": "21 of 30",
+    "score": 10,
+    "percentile": "8",
+    "sten": "3",
+    "date_taken": "Dec 10th, 2020"
+  },
+  {
+    "id": "506",
+    "candidate_id": "201",
+    "testeeName": "Marcia Danai  Muchuchu",
+    "testName": "NON-VERBAL REASONING TEST",
+    "attempts": "25 of 25",
+    "score": 13,
+    "percentile": "56",
+    "sten": "6",
+    "date_taken": "Dec 10th, 2020"
+  },
+  {
+    "id": "498",
+    "candidate_id": "199",
+    "testeeName": "Tafadzwa Madovi",
+    "testName": "VERBAL REASONING VEREA 1.O",
+    "attempts": "50 of 50",
+    "score": 22,
+    "percentile": "6",
+    "sten": "2",
+    "date_taken": "Dec 7th, 2020"
+  },
+  {
+    "id": "499",
+    "candidate_id": "199",
+    "testeeName": "Tafadzwa Madovi",
+    "testName": "NUMERICAL REASONING TEST   NUREA 1.0",
+    "attempts": "23 of 30",
+    "score": 14,
+    "percentile": "41",
+    "sten": "5",
+    "date_taken": "Dec 7th, 2020"
+  },
+  {
+    "id": "500",
+    "candidate_id": "199",
+    "testeeName": "Tafadzwa Madovi",
+    "testName": "NON-VERBAL REASONING TEST",
+    "attempts": "25 of 25",
+    "score": 11,
+    "percentile": "42",
+    "sten": "5",
+    "date_taken": "Dec 7th, 2020"
+  },
+  {
+    "id": "477",
+    "candidate_id": "196",
+    "testeeName": "Gladman  Njanji",
+    "testName": "VERBAL REASONING VEREA 1.O",
+    "attempts": "50 of 50",
+    "score": 34,
+    "percentile": "71",
+    "sten": "7",
+    "date_taken": "Dec 3rd, 2020"
+  },
+  {
+    "id": "478",
+    "candidate_id": "196",
+    "testeeName": "Gladman  Njanji",
+    "testName": "NUMERICAL REASONING TEST   NUREA 1.0",
+    "attempts": "30 of 30",
+    "score": 13,
+    "percentile": "31",
+    "sten": "4",
+    "date_taken": "Dec 3rd, 2020"
+  },
+  {
+    "id": "479",
+    "candidate_id": "196",
+    "testeeName": "Gladman  Njanji",
+    "testName": "NON-VERBAL REASONING TEST",
+    "attempts": "0 of 25",
+    "score": 0,
+    "percentile": 0,
+    "sten": 0,
+    "date_taken": "Dec 3rd, 2020"
+  },
+  {
+    "id": "495",
+    "candidate_id": "196",
+    "testeeName": "Gladman  Njanji",
+    "testName": "VERBAL REASONING VEREA 1.O",
+    "attempts": "50 of 50",
+    "score": 30,
+    "percentile": "41",
+    "sten": "5",
+    "date_taken": "Dec 3rd, 2020"
+  },
+  {
+    "id": "496",
+    "candidate_id": "196",
+    "testeeName": "Gladman  Njanji",
+    "testName": "NUMERICAL REASONING TEST   NUREA 1.0",
+    "attempts": "30 of 30",
+    "score": 12,
+    "percentile": "23",
+    "sten": "4",
+    "date_taken": "Dec 3rd, 2020"
+  },
+  {
+    "id": "497",
+    "candidate_id": "196",
+    "testeeName": "Gladman  Njanji",
+    "testName": "NON-VERBAL REASONING TEST",
+    "attempts": "0 of 25",
+    "score": 0,
+    "percentile": 0,
+    "sten": 0,
+    "date_taken": "Dec 3rd, 2020"
+  },
+  {
+    "id": "489",
+    "candidate_id": "198",
+    "testeeName": "Farai Muzvondiwa",
+    "testName": "VERBAL REASONING VEREA 1.O",
+    "attempts": "50 of 50",
+    "score": 35,
+    "percentile": "80",
+    "sten": "7",
+    "date_taken": "Dec 2nd, 2020"
+  },
+  {
+    "id": "490",
+    "candidate_id": "198",
+    "testeeName": "Farai Muzvondiwa",
+    "testName": "NUMERICAL REASONING TEST   NUREA 1.0",
+    "attempts": "27 of 30",
+    "score": 21,
+    "percentile": "96",
+    "sten": "9",
+    "date_taken": "Dec 2nd, 2020"
+  },
+  {
+    "id": "491",
+    "candidate_id": "198",
+    "testeeName": "Farai Muzvondiwa",
+    "testName": "NON-VERBAL REASONING TEST",
+    "attempts": "25 of 25",
+    "score": 18,
+    "percentile": "79",
+    "sten": "8",
+    "date_taken": "Dec 2nd, 2020"
+  },
+  {
+    "id": "492",
+    "candidate_id": "197",
+    "testeeName": "Tinashe  Naykunika",
+    "testName": "VERBAL REASONING VEREA 1.O",
+    "attempts": "50 of 50",
+    "score": 37,
+    "percentile": "92",
+    "sten": "8",
+    "date_taken": "Dec 2nd, 2020"
+  },
+  {
+    "id": "493",
+    "candidate_id": "197",
+    "testeeName": "Tinashe  Naykunika",
+    "testName": "NUMERICAL REASONING TEST   NUREA 1.0",
+    "attempts": "20 of 30",
+    "score": 18,
+    "percentile": "80",
+    "sten": "7",
+    "date_taken": "Dec 2nd, 2020"
+  },
+  {
+    "id": "494",
+    "candidate_id": "197",
+    "testeeName": "Tinashe  Naykunika",
+    "testName": "NON-VERBAL REASONING TEST",
+    "attempts": "25 of 25",
+    "score": 18,
+    "percentile": "79",
+    "sten": "8",
+    "date_taken": "Dec 2nd, 2020"
+  },
+  {
+    "id": "480",
+    "candidate_id": "193",
+    "testeeName": "Moses Mujakachi",
+    "testName": "VERBAL REASONING VEREA 1.O",
+    "attempts": "50 of 50",
+    "score": 28,
+    "percentile": "29",
+    "sten": "4",
+    "date_taken": "Dec 1st, 2020"
+  },
+  {
+    "id": "481",
+    "candidate_id": "193",
+    "testeeName": "Moses Mujakachi",
+    "testName": "NUMERICAL REASONING TEST   NUREA 1.0",
+    "attempts": "29 of 30",
+    "score": 10,
+    "percentile": "8",
+    "sten": "3",
+    "date_taken": "Dec 1st, 2020"
+  },
+  {
+    "id": "482",
+    "candidate_id": "193",
+    "testeeName": "Moses Mujakachi",
+    "testName": "NON-VERBAL REASONING TEST",
+    "attempts": "25 of 25",
+    "score": 3,
+    "percentile": "7",
+    "sten": "2",
+    "date_taken": "Dec 1st, 2020"
+  },
+  {
+    "id": "483",
+    "candidate_id": "194",
+    "testeeName": "Lillian Muchafara  Hapanyengwi",
+    "testName": "VERBAL REASONING VEREA 1.O",
+    "attempts": "50 of 50",
+    "score": 31,
+    "percentile": "48",
+    "sten": "6",
+    "date_taken": "Dec 1st, 2020"
+  },
+  {
+    "id": "484",
+    "candidate_id": "194",
+    "testeeName": "Lillian Muchafara  Hapanyengwi",
+    "testName": "NUMERICAL REASONING TEST   NUREA 1.0",
+    "attempts": "26 of 30",
+    "score": 20,
+    "percentile": "92",
+    "sten": "8",
+    "date_taken": "Dec 1st, 2020"
+  },
+  {
+    "id": "485",
+    "candidate_id": "194",
+    "testeeName": "Lillian Muchafara  Hapanyengwi",
+    "testName": "NON-VERBAL REASONING TEST",
+    "attempts": "20 of 25",
+    "score": 8,
+    "percentile": "32",
+    "sten": "4",
+    "date_taken": "Dec 1st, 2020"
+  },
+  {
+    "id": "486",
+    "candidate_id": "195",
+    "testeeName": "Nhongerai  Nemaramba",
+    "testName": "VERBAL REASONING VEREA 1.O",
+    "attempts": "49 of 50",
+    "score": 33,
+    "percentile": "63",
+    "sten": "6",
+    "date_taken": "Dec 1st, 2020"
+  },
+  {
+    "id": "487",
+    "candidate_id": "195",
+    "testeeName": "Nhongerai  Nemaramba",
+    "testName": "NUMERICAL REASONING TEST   NUREA 1.0",
+    "attempts": "25 of 30",
+    "score": 17,
+    "percentile": "71",
+    "sten": "7",
+    "date_taken": "Dec 1st, 2020"
+  },
+  {
+    "id": "488",
+    "candidate_id": "195",
+    "testeeName": "Nhongerai  Nemaramba",
+    "testName": "NON-VERBAL REASONING TEST",
+    "attempts": "25 of 25",
+    "score": 16,
+    "percentile": "66",
+    "sten": "7",
+    "date_taken": "Dec 1st, 2020"
+  },
+  {
+    "id": "468",
+    "candidate_id": "192",
+    "testeeName": "Moreline Makumbe",
+    "testName": "VERBAL REASONING VEREA 1.O",
+    "attempts": "0 of 50",
+    "score": 0,
+    "percentile": 0,
+    "sten": 0,
+    "date_taken": "Nov 29th, 2020"
+  },
+  {
+    "id": "469",
+    "candidate_id": "192",
+    "testeeName": "Moreline Makumbe",
+    "testName": "NUMERICAL REASONING TEST   NUREA 1.0",
+    "attempts": "23 of 30",
+    "score": 16,
+    "percentile": "62",
+    "sten": "6",
+    "date_taken": "Nov 29th, 2020"
+  },
+  {
+    "id": "470",
+    "candidate_id": "192",
+    "testeeName": "Moreline Makumbe",
+    "testName": "NON-VERBAL REASONING TEST",
+    "attempts": "25 of 25",
+    "score": 14,
+    "percentile": "58",
+    "sten": "6",
+    "date_taken": "Nov 29th, 2020"
+  },
+  {
+    "id": "471",
+    "candidate_id": "191",
+    "testeeName": "Vengesai Mazhindu",
+    "testName": "VERBAL REASONING VEREA 1.O",
+    "attempts": "49 of 50",
+    "score": 27,
+    "percentile": "23",
+    "sten": "4",
+    "date_taken": "Nov 29th, 2020"
+  },
+  {
+    "id": "472",
+    "candidate_id": "191",
+    "testeeName": "Vengesai Mazhindu",
+    "testName": "NUMERICAL REASONING TEST   NUREA 1.0",
+    "attempts": "29 of 30",
+    "score": 17,
+    "percentile": "71",
+    "sten": "7",
+    "date_taken": "Nov 29th, 2020"
+  }
+  
+]
