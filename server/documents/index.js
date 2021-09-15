@@ -1,7 +1,6 @@
 module.exports = ({ date_taken, testeeName, testName,attempts, score,sten,percentile} )=> {
     const today = new Date();
-    userInfor(user) 
-    {
+    
       return `
       <!doctype html>
       <html>
@@ -266,6 +265,6 @@ module.exports = ({ date_taken, testeeName, testName,attempts, score,sten,percen
       </html>
       `;
 
-    }
+ 
 
 };

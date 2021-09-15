@@ -56,7 +56,7 @@ app.get('/', (req, res) => {
 //////////////////////////
 
 app.get('/fetch-pdf', (req, res) => {
-    res.sendFile(`${__dirname}/resultting.pdf`)
+    res.sendFile(`${__dirname}/result.pdf`)
 })
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
