@@ -58,8 +58,18 @@ useStyles = makeStyles({
 
 
   handleChange = ({ target: { value, name }}) => this.setState({ [name]: value })
+ 
+  clickMe(row){
+    this.setState({
+      testName:row.testName,
 
-  createAndDownloadPdf = () => {
+    })
+    // alert('Check The Console');
+    console.log(row.candidate_id,row.testeeName,row.testName,row.attempts,row.score,row.percentile,row.sten,row.date_taken );
+  }
+
+  createAndDownloadPdf = (row) => {
+    console.log(row.candidate_id,row.testeeName,row.testName,row.attempts,row.score,row.percentile,row.sten,row.date_taken );
     axios.post('/create-pdf', this.state)
       .then(() => axios.get('fetch-pdf', { responseType: 'blob' }))
       .then((res) => {
@@ -115,7 +125,7 @@ useStyles = makeStyles({
                              <TableCell align="center">{row.percentile}</TableCell>
                              <TableCell align="center">{row.sten}</TableCell>
                              <TableCell align="center">{row.date_taken}</TableCell>
-                             <button >Download PDF</button>
+                             <button onClick={this.createAndDownloadPdf.bind(this,row)}>Download PDF</button>
                            </TableRow>
                          ))}
                        </TableBody>

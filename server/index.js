@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 
 app.post('/create-pdf',  (req, res) => {
 
-    pdf.create(pdfTemplate(userInfor(req.body)), {}).toFile('result.pdf', (err) => { //passing getByOne json
+    pdf.create(pdfTemplate(req.body), {}).toFile('result.pdf', (err) => { //passing getByOne json
         if(err) {
             res.send(Promise.reject());
         }
@@ -45,12 +45,13 @@ app.get('/', (req, res) => {
     
   // Route to fetch particular user 
   // information using id
-  app.post('/', async (req, res) => {
+  app.post('/:id', async (req, res) => {
       
     // Find user from (id:3f2006d22864b8af)  user  is the candidate
-    const user = await repo.findById('504')
-    
+    const user = await repo.findById(req.params.id)
     res.send(userInfo(user))
+
+
   })
 //////////////////////////
 
