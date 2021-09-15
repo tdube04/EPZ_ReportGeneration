@@ -2,39 +2,6 @@
 [
   
   {
-    "id": "504",
-    "candidate_id": "201",
-    "testeeName": "Marcia Danai  Muchuchu",
-    "testName": "VERBAL REASONING VEREA 1.O",
-    "attempts": "49 of 50",
-    "score": 34,
-    "percentile": "71",
-    "sten": "7",
-    "date_taken": "Dec 10th, 2020"
-  },
-  {
-    "id": "505",
-    "candidate_id": "201",
-    "testeeName": "Marcia Danai  Muchuchu",
-    "testName": "NUMERICAL REASONING TEST   NUREA 1.0",
-    "attempts": "21 of 30",
-    "score": 10,
-    "percentile": "8",
-    "sten": "3",
-    "date_taken": "Dec 10th, 2020"
-  },
-  {
-    "id": "506",
-    "candidate_id": "201",
-    "testeeName": "Marcia Danai  Muchuchu",
-    "testName": "NON-VERBAL REASONING TEST",
-    "attempts": "25 of 25",
-    "score": 13,
-    "percentile": "56",
-    "sten": "6",
-    "date_taken": "Dec 10th, 2020"
-  },
-  {
     "id": "498",
     "candidate_id": "199",
     "testeeName": "Tafadzwa Madovi",

@@ -30,6 +30,7 @@ const AllItems = () => {
             console.log(error)
         }
     }
+    
 
     const useStyles = makeStyles({
         table: {

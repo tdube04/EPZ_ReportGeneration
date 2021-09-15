@@ -3,6 +3,21 @@ import axios from 'axios';
 import { saveAs } from 'file-saver';
 import AllItems from './AllItems';
 
+
+import "./App.css";
+import MaterialTable from 'material-table';
+
+import { makeStyles } from "@material-ui/core/styles";
+import Table from "@material-ui/core/Table";
+import TableBody from "@material-ui/core/TableBody";
+import TableCell from "@material-ui/core/TableCell";
+import TableContainer from "@material-ui/core/TableContainer";
+import TablePagination from '@material-ui/core/TablePagination';
+import TableHead from "@material-ui/core/TableHead";
+import TableRow from "@material-ui/core/TableRow";
+import Paper from "@material-ui/core/Paper";
+
+
 import './App.css';
 
 class App extends Component {
@@ -15,7 +30,32 @@ class App extends Component {
     sten: 0,
     percentile: 0,
     date_taken: '',
+    candidates:[],
+    loading: true,
+    
   }
+
+  async componentDidMount() {
+    const url = "http://localhost:5000/items";
+    const response = await fetch(url);
+    const data =  await response.json();
+    this.setState({candidates: data, loading: false});
+  }
+
+useStyles = makeStyles({
+    table: {
+      minWidth: 650
+    }
+  });
+
+
+ classes = makeStyles({
+  table: {
+    minWidth: 650
+  }
+});
+
+
 
   handleChange = ({ target: { value, name }}) => this.setState({ [name]: value })
 
@@ -30,6 +70,12 @@ class App extends Component {
   }
 
   render() {
+    if(this.state.loading) {
+      return <div>loading....</div>;
+    }
+    if(!this.state.candidates.length) {
+      return <div>Didn't get a candidate</div>
+    }
     return (
       <div className="App">
         
@@ -41,7 +87,42 @@ class App extends Component {
         <input type="number" placeholder="Percentile" name="percentile" onChange={this.handleChange} />
         <button onClick={this.createAndDownloadPdf}>Download PDF</button>
 
-        <AllItems/>
+        <h1>Candidate list</h1>
+                  <Paper>
+                   <TableContainer>
+                     <Table >
+                       <TableHead>
+                         <TableRow>
+                           <TableCell align="center">Candidate ID</TableCell>
+                           <TableCell align="center">Testee Name</TableCell>
+                           <TableCell align="center">Test Name</TableCell>
+                           <TableCell align="center">Attempts</TableCell>
+                           <TableCell align="center">Score</TableCell>
+                           <TableCell align="center">Percentile&nbsp;(%)</TableCell>
+                           <TableCell align="center">Sten</TableCell>
+                           <TableCell align="center">Date Taken</TableCell>
+
+                         </TableRow>
+                       </TableHead>
+                       <TableBody>
+                         {this.state.candidates.map((row) => (
+                           <TableRow key={row.candidate_id}>
+                             <TableCell align="center" component="th" scope="row">{row.candidate_id} </TableCell>
+                             <TableCell align="center">{row.testeeName}</TableCell>
+                             <TableCell align="center">{row.testName}</TableCell>
+                             <TableCell align="center">{row.attempts}</TableCell>
+                             <TableCell align="center">{row.score}</TableCell>
+                             <TableCell align="center">{row.percentile}</TableCell>
+                             <TableCell align="center">{row.sten}</TableCell>
+                             <TableCell align="center">{row.date_taken}</TableCell>
+                             <button >Download PDF</button>
+                           </TableRow>
+                         ))}
+                       </TableBody>
+                     </Table>
+                   </TableContainer>
+                   
+                 </Paper>     
       </div>
     );
   }
