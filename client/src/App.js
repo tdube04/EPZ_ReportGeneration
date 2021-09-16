@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { saveAs } from 'file-saver';
-import AllItems from './AllItems';
+
 
 
 import "./App.css";
@@ -32,9 +32,6 @@ class App extends Component {
     date_taken: '',
     candidates:[],
     loading: true,
-    id:'',
-    act:0,
-    index:0
     
   }
 
@@ -65,15 +62,8 @@ useStyles = makeStyles({
   clickMe(row){
     // alert('Check The Console');
     console.log(row);
-    const target =row.target;
-    
-    const value=target.value;
-    const name= target.name;
-    this.setState({
-       [name]: value })
     
   }
-  
 
   createAndDownloadPdf = () => {
     
@@ -85,6 +75,7 @@ useStyles = makeStyles({
         saveAs(pdfBlob, 'newPdf.pdf');
       })
   }
+
   render() {
     if(this.state.loading) {
       return <div>loading....</div>;
@@ -95,12 +86,12 @@ useStyles = makeStyles({
     return (
       <div className="App">
         
-        <input type="text" ref="testeeName" placeholder="Testee Name" name="testeeName" value={this.state.testName} onChange={this.handleChange} />
-        <input type="text" ref="testeName" placeholder="Test Name" name="testName" onChange={this.handleChange}/>
-        <input type="number" ref="attempts" placeholder="Attempts" name="attempts" onChange={this.handleChange} />
-        <input type="number" ref="score"placeholder="Score" name="score" onChange={this.handleChange} />
-        <input type="number" ref="sten" placeholder="Sten" name="sten" onChange={this.handleChange} />
-        <input type="number" ref="percentile" placeholder="Percentile" name="percentile" onChange={this.handleChange} />
+        <input type="text" placeholder="Testee Name" name="testeeName"  onChange={this.handleChange} />
+        <input type="text" placeholder="Test Name" name="testName" onChange={this.handleChange}/>
+        <input type="number" placeholder="Attempts" name="attempts" onChange={this.handleChange} />
+        <input type="number" placeholder="Score" name="score" onChange={this.handleChange} />
+        <input type="number" placeholder="Sten" name="sten" onChange={this.handleChange} />
+        <input type="number" placeholder="Percentile" name="percentile" onChange={this.handleChange} />
         <button onClick={this.createAndDownloadPdf}>Download PDF</button>
 
         <h1>Candidate list</h1>
@@ -131,12 +122,13 @@ useStyles = makeStyles({
                              <TableCell align="center">{row.percentile}</TableCell>
                              <TableCell align="center">{row.sten}</TableCell>
                              <TableCell align="center">{row.date_taken}</TableCell>
-                             <button onClick={()=>this.clickMe(row)}>Download PDF</button>
+                             <button onClick={this.clickMe.bind(this,row)}>Download PDF</button>
                            </TableRow>
                          ))}
                        </TableBody>
                      </Table>
-                   </TableContainer>  
+                   </TableContainer>
+                   
                  </Paper>     
       </div>
     );
