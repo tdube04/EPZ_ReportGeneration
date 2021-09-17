@@ -85,9 +85,11 @@
    const staticScale = `
       <table align=center> 
          <tr>
-            <td width="20">1 </td>
+            <td width="20" style="text-align:center; font-size:10px"> Raw Score</td>
+            <td width="210" style="text-align:center; font-size:10px">No.Attempted </td>
+            <td width="20"> 1</td>
             <td width="20"> 2</td>
-            <td width="20">3 </td>
+            <td width="20"> 3</td>
             <td width="20"> 4</td>
             <td width="20"> 5</td>
             <td width="20"> 6</td>
@@ -111,6 +113,7 @@
       scoringTableTemplate += `
          <table id="table${count}" border="1" style='border-collapse:collapse' align=center> 
             <tr>
+               <td  id ="${count}cell1" width="20" bgcolor="red" > </td>
                <td  id ="${count}cell0" width="150" style="font-size:10px" >${candidate.testName}</td>
                <td  id ="${count}cell1" width="20" bgcolor="red" > </td>
                <td  id ="${count}cell2" width="20" bgcolor="red"> </td>
@@ -121,8 +124,9 @@
                <td  id ="${count}cell7" width="20" bgcolor="yellow"></td>
                <td  id ="${count}cell8" width="20" bgcolor="green"></td>
                <td  id ="${count}cell9" width="20" bgcolor="green"></td>
-               <td  id ="${count}cell10" width="20" bgcolor="green"></td>
-               <td  id ="${count}cell11" width="100"  style="text-align:right; font-size:10px" style='border-collapse:collapse'> Upper Average</td>
+               <td  id ="${count}cell10" width="24" bgcolor="green"></td>
+               <td  id ="${count}cell11" width="100"  style="text-align:right; font-size:10px" style='border-collapse:collapse'> </td>
+               <td  id ="${count}cell12" width="24" >${candidate.percentile}%</td>
             </tr>
          </table>
          <br/>
@@ -188,7 +192,7 @@
             }
          </script>`;
 
-      body += `
+      body = `
          <div class="invoice-box">
             <table cellpadding="0" cellspacing="0">
                <tr class="top">
@@ -209,33 +213,11 @@
                            <td>
                               Testee name: ${candidate.testeeName}
                            </td>
-                           <td>
-                              Test name: ${candidate.testName}
-                           </td>
                         </tr>
                      </table>
                   </td>
                </tr>
-               <tr class="heading">
-                  <td>Column :</td>
-                  <td>Value</td>
-               </tr>
-               <tr class="item">
-                  <td>Attempts:</td>
-                  <td>${candidate.attempts}</td>
-               </tr>
-               <tr class="item">
-                  <td>Score:</td>
-                  <td>${candidate.score}</td>
-               </tr>
-               <tr class="item">
-                  <td>Sten:</td>
-                  <td>${candidate.sten}</td>
-               </tr>
-               <tr class="item">
-                  <td>Percentile:</td>
-                  <td>${candidate.percentile}%</td>
-               </tr>
+               
             </table>
             <br />
          </div>

@@ -98,14 +98,6 @@ useStyles = makeStyles({
     }
     return (
       <div className="App">
-        
-        <input type="text" placeholder="Testee Name" name="testeeName"  onChange={this.handleChange} />
-        <input type="text" placeholder="Test Name" name="testName" onChange={this.handleChange}/>
-        <input type="number" placeholder="Attempts" name="attempts" onChange={this.handleChange} />
-        <input type="number" placeholder="Score" name="score" onChange={this.handleChange} />
-        <input type="number" placeholder="Sten" name="sten" onChange={this.handleChange} />
-        <input type="number" placeholder="Percentile" name="percentile" onChange={this.handleChange} />
-        <button onClick={this.createAndDownloadPdf}>Download PDF</button>
 
         <h1>Candidate list</h1>
                   <Paper>
@@ -121,7 +113,6 @@ useStyles = makeStyles({
                            <TableCell align="center">Percentile&nbsp;(%)</TableCell>
                            <TableCell align="center">Sten</TableCell>
                            <TableCell align="center">Date Taken</TableCell>
-
                          </TableRow>
                        </TableHead>
                        <TableBody>
