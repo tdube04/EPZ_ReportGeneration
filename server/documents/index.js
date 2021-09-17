@@ -1,8 +1,9 @@
-module.exports = ({ date_taken, testeeName, testName,attempts, score,sten,percentile} )=> {
-    const today = new Date();
-    
-      return `
-      <!doctype html>
+// module.exports = ({ date_taken, testeeName, testName,attempts, score,sten,percentile} )=> {
+   module.exports = (testeeRecords )=> {
+   const today = new Date();
+
+   const openingTags = `
+   <!doctype html>
       <html>
          <head>
             <meta charset="utf-8">
@@ -80,191 +81,169 @@ module.exports = ({ date_taken, testeeName, testName,attempts, score,sten,percen
                }
             </style>
          </head>
-         <body>
-            <div class="invoice-box">
-               <table cellpadding="0" cellspacing="0">
-                  <tr class="top">
-                     <td colspan="2">
-                        <table>
-                           <tr>
-                              
-                              <td>
-                                 Date Taken: ${`${today.getDate()}. ${today.getMonth() + 1}. ${today.getFullYear()}.`}
-                              </td>
-                           </tr>
-                        </table>
-                     </td>
-                  </tr>
-                  <tr class="information">
-                     <td colspan="2">
-                        <table>
-                           <tr>
-                              <td>
-                                 Testee name: ${testeeName}
-                              </td>
-                              <td>
-                                 Test name: ${testName}
-                              </td>
-                           </tr>
-                        </table>
-                     </td>
-                  </tr>
-                  <tr class="heading">
-                     <td>Column :</td>
-                     <td>Value</td>
-                  </tr>
-                  <tr class="item">
-                     <td>Attempts:</td>
-                     <td>${attempts}</td>
-                  </tr>
-                  <tr class="item">
-                     <td>Score:</td>
-                     <td>${score}</td>
-                  </tr>
-                  <tr class="item">
-                     <td>Sten:</td>
-                     <td>${sten}</td>
-                  </tr>
-                  <tr class="item">
-                     <td>Percentile:</td>
-                     <td>${percentile}%</td>
-                  </tr>
-               </table>
-               <br />
-            </div>
-            <table align=center> 
-               <tr>
-                 <td width="20">1 </td>
-                 <td width="20"> 2</td>
-                 <td width="20">3 </td>
-                 <td width="20"> 4</td>
-                 <td width="20"> 5</td>
-                 <td width="20"> 6</td>
-                 <td width="20"> 7</td>
-                 <td width="20"> 8</td>
-                 <td width="20"> 9</td>
-                 <td width="20"> 10</td>
-                 <td width="150"> </td>
-                  
-               </tr>
-               </table>
-               <br/>
-               <table id="table1" border="1" style='border-collapse:collapse' align=center> 
-               <tr>
-                 <td  id ="cell1" width="20" bgcolor="red" > </td>
-                 <td  id ="cell2" width="20" bgcolor="red"> </td>
-                 <td  id ="cell3" width="20" bgcolor="red"></td>
-                 <td  id ="cell4" width="20" bgcolor="yellow"></td>
-                 <td  id ="cell5" width="20" bgcolor="yellow"></td>
-                 <td  id ="cell6" width="20" bgcolor="yellow"></td>
-                 <td  id ="cell7" width="20" bgcolor="yellow"></td>
-                 <td  id ="cell8" width="20" bgcolor="green"></td>
-                 <td  id ="cell9" width="20" bgcolor="green"></td>
-                 <td  id ="cell10" width="20" bgcolor="green"></td>
-                 <td  id ="cell11" width="150"  style="text-align:right" style='border-collapse:collapse'> Upper Average</td>
-               </tr>
-               </table>
-               <br/>
-               <table id="table2" border="1" style='border-collapse:collapse' align=center>
-               <tr>
-                 <td width="20" bgcolor="red" > </td>
-                 <td width="20" bgcolor="red"> </td>
-                 <td width="20" bgcolor="red"></td>
-                 <td width="20" bgcolor="yellow"></td>
-                 <td width="20" bgcolor="yellow"></td>
-                 <td width="20" bgcolor="yellow"></td>
-                 <td width="20" bgcolor="yellow"></td>
-                 <td width="20" bgcolor="green"></td>
-                 <td width="20" bgcolor="green"></td>
-                 <td width="20" bgcolor="green"></td>
-                 <td width="150"  style="text-align:right" style='border-collapse:collapse'> Upper Average</td>
-               </tr>
-               </table>
-               <br/>
-               <table id="table3" border="1" style='border-collapse:collapse' align=center>
-               <tr>
-                    <td width="20" bgcolor="red" > </td>
-                    <td width="20" bgcolor="red"> </td>
-                    <td width="20" bgcolor="red"></td>
-                    <td width="20" bgcolor="yellow"></td>
-                    <td width="20" bgcolor="yellow"></td>
-                    <td width="20" bgcolor="yellow"></td>
-                    <td width="20" bgcolor="yellow"></td>
-                    <td width="20" bgcolor="green"></td>
-                    <td width="20" bgcolor="green"></td>
-                    <td width="20" bgcolor="green"></td>
-                    <td width="150"  style="text-align:right" style='border-collapse:collapse'> Upper Average</td>
-               </tr>
-               </table>
-               <br/>
-               <script>
-                 var table1 = document.getElementById("table1"), cIndex, rIndex;
-                 var cell1 = document.getElementById("cell1");
-                 var cell2 = document.getElementById("cell2");
-  
-                 var cell3 = document.getElementById("cell3");
-                 var cell4 = document.getElementById("cell4");
-                 var cell5 = document.getElementById("cell5");
-                 var cell6 = document.getElementById("cell6");
-                 var cell7 = document.getElementById("cell7");
-                 var cell8 = document.getElementById("cell8");
-                 var cell9 = document.getElementById("cell9");
-                 var cell10 = document.getElementById("cell10");
-                 var cell11 = document.getElementById("cell10");
-  
-                 switch(${sten}) {
-                    case 1:
-                       cell1 = document.getElementById("cell1").innerHTML = "*";
-                       cell11 = document.getElementById("cell11").innerHTML = "Below Average";
-                       break;
-                    case 2:
-                       cell2 = document.getElementById("cell2").innerHTML = "*";
-                       cell11 = document.getElementById("cell11").innerHTML = "Below Average";
-                       break;
-                    case 3:
-                       cell3 = document.getElementById("cell3").innerHTML = "*";
-                       cell11 = document.getElementById("cell11").innerHTML = "Below Average";
-                       break;
-                    case 4:
-                       cell4 = document.getElementById("cell4").innerHTML = "*";
-                       cell11 = document.getElementById("cell11").innerHTML = "Average";
-                       break;
-                    case 5:
-                       cell5 = document.getElementById("cell5").innerHTML = "*";
-                       cell11 = document.getElementById("cell11").innerHTML = "Upper Average";
-                       break;
-                    case 6:
-                       cell6 = document.getElementById("cell6").innerHTML = "*";
-                       cell11 = document.getElementById("cell11").innerHTML = "Upper Average";
-                       break;
-                    case 7:
-                       cell7 = document.getElementById("cell7").innerHTML = "*";
-                       cell11 = document.getElementById("cell11").innerHTML = "Upper Average";
-                       break;
-                    case 8:
-                       cell8 = document.getElementById("cell8").innerHTML = "*";
-                       cell11 = document.getElementById("cell11").innerHTML = "Above Average";
-                       break;
-                    case 9:
-                       cell9 = document.getElementById("cell9").innerHTML = "*";
-                       cell11 = document.getElementById("cell11").innerHTML = "Above Average";
-                       break;
-                    case 10:
-                       cell10 = document.getElementById("cell10").innerHTML = "*";
-                       cell11 = document.getElementById("cell11").innerHTML = "Above Average";
-                       break;
-                    
-                    default:
-                       console.log("");
-                       break;
-                 }
-                    
-               </script
-              
+      <body>`;
+   const staticScale = `
+      <table align=center> 
+         <tr>
+            <td width="20">1 </td>
+            <td width="20"> 2</td>
+            <td width="20">3 </td>
+            <td width="20"> 4</td>
+            <td width="20"> 5</td>
+            <td width="20"> 6</td>
+            <td width="20"> 7</td>
+            <td width="20"> 8</td>
+            <td width="20"> 9</td>
+            <td width="20"> 10</td>
+            <td width="150"> </td>
+         </tr>
+      </table>
+      <br/>`;
+   const closingTags = ` 
          </body>
-      </html>
-      `;
+      </html>`;
 
- 
+   var body = ``;
+   var scoringTableTemplate = ``
+   var count = 1;
+
+   testeeRecords.forEach(candidate => {
+      scoringTableTemplate += `
+         <table id="table${count}" border="1" style='border-collapse:collapse' align=center> 
+            <tr>
+               <td  id ="${count}cell0" width="150" style="font-size:10px" >${candidate.testName}</td>
+               <td  id ="${count}cell1" width="20" bgcolor="red" > </td>
+               <td  id ="${count}cell2" width="20" bgcolor="red"> </td>
+               <td  id ="${count}cell3" width="20" bgcolor="red"></td>
+               <td  id ="${count}cell4" width="20" bgcolor="yellow"></td>
+               <td  id ="${count}cell5" width="20" bgcolor="yellow"></td>
+               <td  id ="${count}cell6" width="20" bgcolor="yellow"></td>
+               <td  id ="${count}cell7" width="20" bgcolor="yellow"></td>
+               <td  id ="${count}cell8" width="20" bgcolor="green"></td>
+               <td  id ="${count}cell9" width="20" bgcolor="green"></td>
+               <td  id ="${count}cell10" width="20" bgcolor="green"></td>
+               <td  id ="${count}cell11" width="100"  style="text-align:right; font-size:10px" style='border-collapse:collapse'> Upper Average</td>
+            </tr>
+         </table>
+         <br/>
+
+         <script>
+            var cell1 = document.getElementById("${count}cell1");
+            var cell2 = document.getElementById("${count}cell2");
+            var cell3 = document.getElementById("${count}cell3");
+            var cell4 = document.getElementById("${count}cell4");
+            var cell5 = document.getElementById("${count}cell5");
+            var cell6 = document.getElementById("${count}cell6");
+            var cell7 = document.getElementById("${count}cell7");
+            var cell8 = document.getElementById("${count}cell8");
+            var cell9 = document.getElementById("${count}cell9");
+            var cell10 = document.getElementById("${count}cell10");
+            var cell11 = document.getElementById("${count}cell10");
+
+            switch(${candidate.sten}) {
+               case 1:
+                  cell1 = document.getElementById("${count}cell1").innerHTML = "*";
+                  cell11 = document.getElementById("${count}cell11").innerHTML = "Below Average";
+                  break;
+               case 2:
+                  cell2 = document.getElementById("${count}cell2").innerHTML = "*";
+                  cell11 = document.getElementById("${count}cell11").innerHTML = "Below Average";
+                  break;
+               case 3:
+                  cell3 = document.getElementById("${count}cell3").innerHTML = "*";
+                  cell11 = document.getElementById("${count}cell11").innerHTML = "Below Average";
+                  break;
+               case 4:
+                  cell4 = document.getElementById("${count}cell4").innerHTML = "*";
+                  cell11 = document.getElementById("${count}cell11").innerHTML = "Average";
+                  break;
+               case 5:
+                  cell5 = document.getElementById("${count}cell5").innerHTML = "*";
+                  cell11 = document.getElementById("${count}cell11").innerHTML = "Upper Average";
+                  break;
+               case 6:
+                  cell6 = document.getElementById("${count}cell6").innerHTML = "*";
+                  cell11 = document.getElementById("${count}cell11").innerHTML = "Upper Average";
+                  break;
+               case 7:
+                  cell7 = document.getElementById("${count}cell7").innerHTML = "*";
+                  cell11 = document.getElementById("${count}cell11").innerHTML = "Upper Average";
+                  break;
+               case 8:
+                  cell8 = document.getElementById("${count}cell8").innerHTML = "*";
+                  cell11 = document.getElementById("${count}cell11").innerHTML = "Above Average";
+                  break;
+               case 9:
+                  cell9 = document.getElementById("${count}cell9").innerHTML = "*";
+                  cell11 = document.getElementById("${count}cell11").innerHTML = "Above Average";
+                  break;
+               case 10:
+                  cell10 = document.getElementById("${count}cell10").innerHTML = "*";
+                  cell11 = document.getElementById("${count}cell11").innerHTML = "Above Average";
+                  break;
+               
+               default:
+                  console.log("");
+                  break;
+            }
+         </script>`;
+
+      body += `
+         <div class="invoice-box">
+            <table cellpadding="0" cellspacing="0">
+               <tr class="top">
+                  <td colspan="2">
+                     <table>
+                        <tr>
+                           <td>
+                              Date Taken: ${`${today.getDate()}. ${today.getMonth() + 1}. ${today.getFullYear()}.`}
+                           </td>
+                        </tr>
+                     </table>
+                  </td>
+               </tr>
+               <tr class="information">
+                  <td colspan="2">
+                     <table>
+                        <tr>
+                           <td>
+                              Testee name: ${candidate.testeeName}
+                           </td>
+                           <td>
+                              Test name: ${candidate.testName}
+                           </td>
+                        </tr>
+                     </table>
+                  </td>
+               </tr>
+               <tr class="heading">
+                  <td>Column :</td>
+                  <td>Value</td>
+               </tr>
+               <tr class="item">
+                  <td>Attempts:</td>
+                  <td>${candidate.attempts}</td>
+               </tr>
+               <tr class="item">
+                  <td>Score:</td>
+                  <td>${candidate.score}</td>
+               </tr>
+               <tr class="item">
+                  <td>Sten:</td>
+                  <td>${candidate.sten}</td>
+               </tr>
+               <tr class="item">
+                  <td>Percentile:</td>
+                  <td>${candidate.percentile}%</td>
+               </tr>
+            </table>
+            <br />
+         </div>
+         <br />
+      `;
+      count++;
+   });
+
+   return openingTags + body + staticScale + scoringTableTemplate + closingTags;
 
 };
