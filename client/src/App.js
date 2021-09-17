@@ -61,7 +61,12 @@ useStyles = makeStyles({
  
   clickMe(row){
     // alert('Check The Console');
-    console.log(row);
+    this.setState(row);
+   
+    console.log('===============>>>>>>');
+    console.log(this.state);
+    console.log('===============>>>>>>');
+    this.createAndDownloadPdf();
     
   }
 
