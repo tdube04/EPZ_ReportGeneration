@@ -32,6 +32,9 @@ class App extends Component {
     date_taken: '',
     candidates:[],
     loading: true,
+
+    // Test State var
+    testeeRecords:[]
     
   }
 
@@ -55,19 +58,29 @@ useStyles = makeStyles({
   }
 });
 
-
-
   handleChange = ({ target: { value, name }}) => this.setState({ [name]: value })
- 
-  clickMe(row){
-    // alert('Check The Console');
-    console.log(row);
+
+  async clickMe  (row){
+    var testeeRecords = [];
+
+    this.state.candidates.forEach(candidate => {
+      if(candidate.candidate_id === row.candidate_id){
+        testeeRecords.push(candidate);
+      }
+    });
+
+    // this.setState(row, function () {
+    //   this.createAndDownloadPdf();
+    // });
     
+    this.setState({testeeRecords:testeeRecords}, function(){
+      this.createAndDownloadPdf();
+    })
+
   }
 
   createAndDownloadPdf = () => {
-    
-    axios.post('/create-pdf', this.state)
+    axios.post('/create-pdf', this.state.testeeRecords)
       .then(() => axios.get('fetch-pdf', { responseType: 'blob' }))
       .then((res) => {
         const pdfBlob = new Blob([res.data], { type: 'application/pdf' });
