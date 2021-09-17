@@ -55,18 +55,15 @@ useStyles = makeStyles({
   }
 });
 
-
-
   handleChange = ({ target: { value, name }}) => this.setState({ [name]: value })
- 
-  clickMe(row){
-    // alert('Check The Console');
-    console.log(row);
-    
+
+  async clickMe  (row){
+    this.setState(row, function () {
+      this.createAndDownloadPdf();
+    });
   }
 
   createAndDownloadPdf = () => {
-    
     axios.post('/create-pdf', this.state)
       .then(() => axios.get('fetch-pdf', { responseType: 'blob' }))
       .then((res) => {
