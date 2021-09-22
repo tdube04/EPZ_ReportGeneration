@@ -236,7 +236,7 @@ module.exports = (testeeRecords, allStens) => {
                <td  id ="${count}cell9" width="20" bgcolor="green" align=center></td>
                <td  id ="${count}cell10" width="20" bgcolor="green" align=center></td>
                <td  id ="${count}cell11" width="100"  style="text-align:right; font-size:10px" style='border-collapse:collapse'> </td>
-               
+               <td  id ="${count}cell112" width="20"  align=center>${candidate.percentile}%</td>
             </tr>
 
          </table>
@@ -377,55 +377,55 @@ module.exports = (testeeRecords, allStens) => {
                </div>
                </div>
             </div>
-            <div style="position:absolute; bottom:1200px; left:0px; height: 70vh; width:56vh" > 
+            <div style="position:absolute; bottom:1000px; left:0px; height: 70vh; width:56vh" > 
          <p style="text-align:center; font-size:12px;font-family: Candara"> DONE BY EP INDUSTRIAL PSYCHOLOGICAL SERVICES P/L </p>
          <a href="default.asp">
-         <img  src="https://drive.google.com/file/d/18UiU1dndntNTVypYJ1DUwQINrrzjTCdA/view?usp=sharing"
-         style="width:100%; max-width:156px;">
-</a>
+            <img  src="https://i2.wp.com/cleverlogos.co/wp-content/uploads/2018/05/reciepthound_1.jpg?fit=800%2C600&ssl=1"
+            style="width:100%; max-width:156px;">
+         </a>
       </div>
             <br />
          </div>
          <div style="height: 16vh">
          </div>
          <div style="margin-left: 24vh; font-family: Candara, serif" >
-            <div style="background-color: #1b2e53; height: 8vh; width:250vh">
-               <h3 style="text-align:center; font-size:14px; color: white;font-family: Candara, serif" >NON-INTERACTIVE PSYCHOMETRIC TESTING</h3>
+            <div style="background-color: #1b2e53; height: 8vh; width:200vh">
+               <h3 style="text-align:left; font-size:14px; color: white;font-family: Candara, serif" >NON-INTERACTIVE PSYCHOMETRIC TESTING</h3>
            </div>
-           <div style="width:250vh; font-family: Candara">
+           <div style="width:200vh; font-family: Candara; font-size:12">
             <h3 style="text-align:left; font-size:12px" >COGNITIVE ABILITY - CRITICAL REASONING TEST BATTERY</h3>
-            <p >The Critical Reasoning Test (CRT) Battery assesses the candidate’s cognitive ability,
+            <p  style="font-size:12px">The Critical Reasoning Test (CRT) Battery assesses the candidate’s cognitive ability,
                that is, verbal reasoning, numerical reasoning and abstract reasoning skills. It assesses 
                the ability to solve complex problems as well as make meaningful decisions on the basis of information presented.
                The cognitive ability level is then compared with similar other candidates in a given population (norms).
                The battery consists of the following tests:</p>
             <p>Verbal Reasoning</p>
-            <img src="logo.PNG" alt="EPZ_LOGO">
-            <p>The Verbal Reasoning Test assesses a person’s ability to use words in a logical way, 
+            
+            <p  style="font-size:12px">The Verbal Reasoning Test assesses a person’s ability to use words in a logical way, 
                that is, the ability to perceive and understand concepts and ideas verbally. 
                It assesses one’s ability to make decisions based on given information, as well as the ability to understand, 
                interpret and use words for the purposes of communication.
             </p>
             <p>Numerical Reasoning</p>
-            <p>The Numerical Reasoning Tests assesses the candidate’s ability to understand and interpret given 
+            <p  style="font-size:12px">The Numerical Reasoning Tests assesses the candidate’s ability to understand and interpret given 
                statistical information presented
                in tabular and graphical form, for work-related decision-making.
             </p>
             <p>Abstract Reasoning </p>
-            <p>This test assesses the candidate’s ability to understand and follow complex patterns and make judgments
+            <p  style="font-size:12px">This test assesses the candidate’s ability to understand and follow complex patterns and make judgments
                for decision-making. It seeks to measure the ability to think logically,
                imagine concepts and reduce those concepts into practical realities.
             </p>
-            <p>The cognitive ability level is then compared with similar other candidates in a given population (norms).
+            <p  style="font-size:12px">The cognitive ability level is then compared with similar other candidates in a given population (norms).
                As a result a standard score (sten) and a percentile rank (%ile) are used to interpret the performance on this test battery and are given to 
                indicate where one is in comparison with similar candidates in the population who took the same test.  Stens (standard ten) rank candidates’ performance on a scale of 1 (lowest)  to 10,  (highest), in comparison with a representative sample of similar others. Percentiles (%ile) provide the relative standing of the candidate’s performance on the test on a scale of 1 to 100, that is, 
                when compared again to a representative sample of similar others who took the same test. 
             </p>
-            <p>For example, performance at 80%ile means that one performed better
+            <p  style="font-size:12px">For example, performance at 80%ile means that one performed better
                than 79% of a comparable sample. So those with higher Stens and percentiles would have 
                performed better than those with lower Stens and percentiles. 
             </p>
-            <p> The candidate’s cognitive ability profile is provided overleaf.</p>
+            <p  style="font-size:12px"> The candidate’s cognitive ability profile is provided overleaf.</p>
          </div>
    </div>
          <br />
