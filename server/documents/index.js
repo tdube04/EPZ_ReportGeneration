@@ -304,14 +304,14 @@ module.exports = (testeeRecords, allStens) => {
          </script>`;
 
       body = `
+      
          <div class="invoice-box" style="background-color: #f2f2f2; height: 340vh" style="margin-top:50px;">
-            
-                     
-            <div style="background-color: #a8d08d; height: 340vh; width:220vh; margin-left:20vh;">
-               <div style="background-color: #8eaadb;height: 340vh; width:220vh;margin-left:8vh"> 
+            <div style="background-color: #a8d08d; height: 340vh; width:100vh; margin-left:43vh;">
+               
+               <div style="background-color: #8eaadb;height: 340vh; width:200vh;margin-left:5vh"> 
                
                
-               <div style="background-color: #1b2e53; height: 30vh; width:220vh">
+               <div style="background-color: #1b2e53; height: 30vh; width:200vh">
                    <h2 style="text-align:absolute; color: white; font-size:20px; font-family: Candara,">CONFIDENTIAL PSYCHOMETRIC REPORT</h2>
                </div>
                <table cellpadding="0" cellspacing="0" >
@@ -373,11 +373,17 @@ module.exports = (testeeRecords, allStens) => {
                      Other sources of information like interviews, reference checks, etc.,
                      should also be considered in making a final decision.
                   </p>
-                  <h5 style="text-align:center; font-size:14px;font-family: Candara">DONE BY EP INDUSTRIAL PSYCHOLOGICAL SERVICES P/L</h5>
+                 
                </div>
                </div>
             </div>
-            
+            <div style="position:absolute; bottom:1200px; left:0px; height: 70vh; width:56vh" > 
+         <p style="text-align:center; font-size:12px;font-family: Candara"> DONE BY EP INDUSTRIAL PSYCHOLOGICAL SERVICES P/L </p>
+         <a href="default.asp">
+         <img  src="https://drive.google.com/file/d/18UiU1dndntNTVypYJ1DUwQINrrzjTCdA/view?usp=sharing"
+         style="width:100%; max-width:156px;">
+</a>
+      </div>
             <br />
          </div>
          <div style="height: 16vh">
@@ -394,6 +400,7 @@ module.exports = (testeeRecords, allStens) => {
                The cognitive ability level is then compared with similar other candidates in a given population (norms).
                The battery consists of the following tests:</p>
             <p>Verbal Reasoning</p>
+            <img src="logo.PNG" alt="EPZ_LOGO">
             <p>The Verbal Reasoning Test assesses a person’s ability to use words in a logical way, 
                that is, the ability to perceive and understand concepts and ideas verbally. 
                It assesses one’s ability to make decisions based on given information, as well as the ability to understand, 
@@ -419,14 +426,8 @@ module.exports = (testeeRecords, allStens) => {
                performed better than those with lower Stens and percentiles. 
             </p>
             <p> The candidate’s cognitive ability profile is provided overleaf.</p>
-
-
          </div>
-         
-         </div>
-         
-         
-         
+   </div>
          <br />
       `;
       count++;
