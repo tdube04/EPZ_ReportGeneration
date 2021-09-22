@@ -1,5 +1,5 @@
 // module.exports = ({ date_taken, testeeName, testName,attempts, score,sten,percentile} )=> {
-   module.exports = (testeeRecords )=> {
+   module.exports = (testeeRecords, allStens )=> {
    const today = new Date();
 
    const openingTags = `
@@ -7,9 +7,10 @@
       <html>
          <head>
             <meta charset="utf-8">
-            <title>PDF Result Template</title>
+            <title>PDF Report Template</title>
             <style>
                .invoice-box {
+                  margin-left: 24vh
                max-width: 800px;
                margin: auto;
                padding: 30px;
@@ -83,21 +84,29 @@
          </head>
       <body>`;
    const staticScale = `
-      <table align=center> 
+      <table  align=center > 
+     
+         <tr >
+            <td width="60" align=center bgcolor="red" > Low</td>
+            <td width="80" align=center bgcolor="yellow" > Average</td>
+            <td width="60" align=center bgcolor="green" > High</td>
+         </tr>
+    
+         </br>
          <tr>
             <td width="20" style="text-align:center; font-size:10px"> Raw Score</td>
             <td width="210" style="text-align:center; font-size:10px">No.Attempted </td>
-            <td width="20"> 1</td>
-            <td width="20"> 2</td>
-            <td width="20"> 3</td>
-            <td width="20"> 4</td>
-            <td width="20"> 5</td>
-            <td width="20"> 6</td>
-            <td width="20"> 7</td>
-            <td width="20"> 8</td>
-            <td width="20"> 9</td>
-            <td width="20"> 10</td>
-            <td width="150"> </td>
+            <td width="20" align=center> 1</td>
+            <td width="20" align=center> 2</td>
+            <td width="20" align=center> 3</td>
+            <td width="20" align=center> 4</td>
+            <td width="20" align=center> 5</td>
+            <td width="20" align=center> 6</td>
+            <td width="20" align=center> 7</td>
+            <td width="20" align=center> 8</td>
+            <td width="20" align=center> 9</td>
+            <td width="20" align=center> 10</td>
+            <td width="150" align=center> </td>
          </tr>
       </table>
       <br/>`;
@@ -106,28 +115,127 @@
       </html>`;
 
    var body = ``;
-   var scoringTableTemplate = ``
+   var scoringTableTemplate = ``;
    var count = 1;
+   var averageTableTemplate = '';
+    
+
+   
+   testeeRecords.forEach(candidate => {
+
+      let stenSum = 0; let itemsFound = 0;
+
+      var allStens  = [];
+
+      allStens = candidate.sten;
+      var len = allStens.length;
+     
+
+      let item = null;
+
+      for (let i = 0; i < len; i++) {
+         item = allStens[i];
+         if(item.found) {
+            stenSum = item.sten + stenSum;
+            itemsFound = itemsFound + 1;
+
+         }
+      }
+      const averageSten = stenSum / itemsFound;
+      console.log(averageSten);
+
+
+      averageTableTemplate = `
+      <div align=center>
+         <p> Overall Cognitive Profile</p>
+      </div>
+      <table id="tableAve" border="1" style='border-collapse:collapse' align=center> 
+      <tr>
+         <td   width="100" bgcolor="red"     height=" 20"  align=center>Below Average </td>     
+         <td   width="100" bgcolor="#ffc000" height=" 20"  align=center>Lower Average</td>
+         <td   width="100" bgcolor="#92d050" height=" 20"  align=center>Average</td>
+         <td   width="100" bgcolor="#70ad47" height=" 20"  align=center>Upper Average</td>
+         <td   width="100" bgcolor="#00b050" height=" 20"  align=center>Above Average</td>
+      </tr>
+      <tr>
+         <td  id ="cell1" width="100" height=" 20" align=center>   </td>     
+         <td  id ="cell2" width="100" height=" 20" align=center>   </td>
+         <td  id ="cell3" width="100" height=" 20" align=center>   </td>
+         <td  id ="cell4" width="100" height=" 20" align=center>   </td>
+         <td  id ="cell5" width="100" height=" 20" align=center>   </td>
+      </tr>
+
+   </table>
+   <br/>
+
+   <script>
+            var cell1 = document.getElementById("cell1");
+            var cell2 = document.getElementById("cell2");
+            var cell3 = document.getElementById("cell3");
+            var cell4 = document.getElementById("cell4");
+            var cell5 = document.getElementById("cell5");
+
+            var aveSten = 6;
+
+            switch(aveSten) {
+               case 1:
+               case 2:
+               case 3:
+                  cell1 = document.getElementById("cell1").innerHTML = "*";
+                  
+                  break;
+              
+               case 4:
+                  cell2 = document.getElementById("cell2").innerHTML = "*";
+                  
+                  break;
+               case 5:
+               case 6:
+                  cell3 = document.getElementById("cell3").innerHTML = "*";
+                  
+                  break;
+               
+                  
+               case 7:
+                  cell4 = document.getElementById("cell4").innerHTML = "*";
+                  
+                  break;
+               case 8:
+               case 9:
+               case 10:
+                  cell5 = document.getElementById("cell5").innerHTML = "*";
+                  
+                  break;
+               default:
+                  console.log("");
+                  break;
+            }
+         </script>
+
+
+      `
+   })
 
    testeeRecords.forEach(candidate => {
       scoringTableTemplate += `
          <table id="table${count}" border="1" style='border-collapse:collapse' align=center> 
-            <tr>
-               <td  id ="${count}cell1" width="20" bgcolor="red" > </td>
+            <tr >
+            
                <td  id ="${count}cell0" width="150" style="font-size:10px" >${candidate.testName}</td>
-               <td  id ="${count}cell1" width="20" bgcolor="red" > </td>
-               <td  id ="${count}cell2" width="20" bgcolor="red"> </td>
-               <td  id ="${count}cell3" width="20" bgcolor="red"></td>
-               <td  id ="${count}cell4" width="20" bgcolor="yellow"></td>
-               <td  id ="${count}cell5" width="20" bgcolor="yellow"></td>
-               <td  id ="${count}cell6" width="20" bgcolor="yellow"></td>
-               <td  id ="${count}cell7" width="20" bgcolor="yellow"></td>
-               <td  id ="${count}cell8" width="20" bgcolor="green"></td>
-               <td  id ="${count}cell9" width="20" bgcolor="green"></td>
-               <td  id ="${count}cell10" width="24" bgcolor="green"></td>
+               <td  id ="${count}cell1" width="20" bgcolor="red"  align=center> </td>
+               <td  id ="${count}cell2" width="20" bgcolor="red"  align=center> </td>
+               <td  id ="${count}cell3" width="20" bgcolor="red"  align=center></td>
+               <td  id ="${count}cell4" width="20" bgcolor="yellow"  align=center></td>
+               <td  id ="${count}cell5" width="20" bgcolor="yellow" align=center></td>
+               <td  id ="${count}cell6" width="20" bgcolor="yellow" align=center></td>
+               <td  id ="${count}cell7" width="20" bgcolor="yellow" align=center></td>
+               <td  id ="${count}cell8" width="20" bgcolor="green" align=center></td>
+               <td  id ="${count}cell9" width="20" bgcolor="green" align=center></td>
+               <td  id ="${count}cell10" width="24" bgcolor="green" align=center></td>
                <td  id ="${count}cell11" width="100"  style="text-align:right; font-size:10px" style='border-collapse:collapse'> </td>
-               <td  id ="${count}cell12" width="24" >${candidate.percentile}%</td>
+               
             </tr>
+
          </table>
          <br/>
 
@@ -142,7 +250,7 @@
             var cell8 = document.getElementById("${count}cell8");
             var cell9 = document.getElementById("${count}cell9");
             var cell10 = document.getElementById("${count}cell10");
-            var cell11 = document.getElementById("${count}cell10");
+            var cell11 = document.getElementById("${count}cell11");
 
             switch(${candidate.sten}) {
                case 1:
@@ -193,14 +301,15 @@
          </script>`;
 
       body = `
-         <div class="invoice-box">
-            <table cellpadding="0" cellspacing="0">
+         <div class="invoice-box" style="background-color: #f5fafa; height: 340vh" style="margin-left: 24vh">
+            <h2  style="text-align:center; font-size:20px">CONFIDENTIAL PSYCHOMETRIC REPORT</h2>
+            <table cellpadding="0" cellspacing="0" >
                <tr class="top">
                   <td colspan="2">
                      <table>
                         <tr>
                            <td>
-                              Date Taken: ${`${today.getDate()}. ${today.getMonth() + 1}. ${today.getFullYear()}.`}
+                              Date Taken : ${candidate.date_taken}
                            </td>
                         </tr>
                      </table>
@@ -211,21 +320,104 @@
                      <table>
                         <tr>
                            <td>
-                              Testee name: ${candidate.testeeName}
+                              Testee name : ${candidate.testeeName}
                            </td>
                         </tr>
                      </table>
                   </td>
                </tr>
-               
+               <tr class="information">
+                  <td colspan="2">
+                     <table>
+                        <tr>
+                           <td>
+                              Position : Position
+                           </td>
+                        </tr>
+                     </table>
+                  </td>
+               </tr>
+               <tr class="information">
+                  <td colspan="2">
+                     <table>
+                        <tr>
+                           <td>
+                              Company : Company Name
+                           </td>
+                        </tr>
+                     </table>
+                  </td>
+               </tr>
+                          
             </table>
+            <div style="margin-left: 12vh">
+               <p>The contents of this report are highly confidential 
+                  and unauthorised persons not directly involved with the 
+                  selection decision may not obtain access to its contents. 
+                  Under NO circumstances may this report 
+                  or a copy of it be given to the candidate it concerns.
+               </p>
+               <p>Psychometric tests must not be used as the
+                  sole determinant of selection decisions. 
+                  Other sources of information like interviews, reference checks, etc.,
+                  should also be considered in making a final decision.
+               </p>
+               <h5 style="text-align:center; font-size:14px">DONE BY EP INDUSTRIAL PSYCHOLOGICAL SERVICES P/L</h5>
+            </div>
             <br />
          </div>
+         <div style="height: 16vh">
+         </div>
+         <div style="margin-left: 24vh" >
+            <div style="background-color: #1b2e53; height: 8vh; width:250vh">
+               <h3 style="text-align:center; font-size:14px; color: white" >NON-INTERACTIVE PSYCHOMETRIC TESTING</h3>
+           </div>
+         <div style="width:250vh">
+            <h3 style="text-align:left; font-size:12px" >COGNITIVE ABILITY - CRITICAL REASONING TEST BATTERY</h3>
+            <p>The Critical Reasoning Test (CRT) Battery assesses the candidate’s cognitive ability,
+               that is, verbal reasoning, numerical reasoning and abstract reasoning skills. It assesses 
+               the ability to solve complex problems as well as make meaningful decisions on the basis of information presented.
+               The cognitive ability level is then compared with similar other candidates in a given population (norms).
+               The battery consists of the following tests:</p>
+            <p>Verbal Reasoning</p>
+            <p>The Verbal Reasoning Test assesses a person’s ability to use words in a logical way, 
+               that is, the ability to perceive and understand concepts and ideas verbally. 
+               It assesses one’s ability to make decisions based on given information, as well as the ability to understand, 
+               interpret and use words for the purposes of communication.
+            </p>
+            <p>Numerical Reasoning</p>
+            <p>The Numerical Reasoning Tests assesses the candidate’s ability to understand and interpret given 
+               statistical information presented
+               in tabular and graphical form, for work-related decision-making.
+            </p>
+            <p>Abstract Reasoning </p>
+            <p>This test assesses the candidate’s ability to understand and follow complex patterns and make judgments
+               for decision-making. It seeks to measure the ability to think logically,
+               imagine concepts and reduce those concepts into practical realities.
+            </p>
+            <p>The cognitive ability level is then compared with similar other candidates in a given population (norms).
+               As a result a standard score (sten) and a percentile rank (%ile) are used to interpret the performance on this test battery and are given to 
+               indicate where one is in comparison with similar candidates in the population who took the same test.  Stens (standard ten) rank candidates’ performance on a scale of 1 (lowest)  to 10,  (highest), in comparison with a representative sample of similar others. Percentiles (%ile) provide the relative standing of the candidate’s performance on the test on a scale of 1 to 100, that is, 
+               when compared again to a representative sample of similar others who took the same test. 
+            </p>
+            <p>For example, performance at 80%ile means that one performed better
+               than 79% of a comparable sample. So those with higher Stens and percentiles would have 
+               performed better than those with lower Stens and percentiles. 
+            </p>
+            <p> The candidate’s cognitive ability profile is provided overleaf.</p>
+
+
+         </div>
+         
+         </div>
+         
+         
+         
          <br />
       `;
       count++;
    });
 
-   return openingTags + body + staticScale + scoringTableTemplate + closingTags;
+   return openingTags + body + staticScale + scoringTableTemplate+ averageTableTemplate + closingTags;
 
 };

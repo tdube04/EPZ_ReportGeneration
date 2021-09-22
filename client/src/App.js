@@ -34,7 +34,8 @@ class App extends Component {
     loading: true,
 
     // Test State var
-    testeeRecords:[]
+    testeeRecords:[],
+    fileName:''
     
   }
 
@@ -62,10 +63,16 @@ useStyles = makeStyles({
 
   async clickMe  (row){
     var testeeRecords = [];
+    var allStens  = [];
 
     this.state.candidates.forEach(candidate => {
       if(candidate.candidate_id === row.candidate_id){
         testeeRecords.push(candidate);
+       
+
+        //===========Finding Average sten===========>>
+
+        //==========================>> End
       }
     });
 
@@ -73,7 +80,7 @@ useStyles = makeStyles({
     //   this.createAndDownloadPdf();
     // });
     
-    this.setState({testeeRecords:testeeRecords}, function(){
+    this.setState({testeeRecords:testeeRecords, allStens:allStens}, function(){
       this.createAndDownloadPdf();
     })
 
@@ -85,7 +92,8 @@ useStyles = makeStyles({
       .then((res) => {
         const pdfBlob = new Blob([res.data], { type: 'application/pdf' });
 
-        saveAs(pdfBlob, 'newPdf.pdf');
+        var fileName = `${this.state.testeeRecords.candidate_id}`;
+        saveAs(pdfBlob, fileName );
       })
   }
 
