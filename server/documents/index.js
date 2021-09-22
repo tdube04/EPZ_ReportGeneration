@@ -1,5 +1,5 @@
 // module.exports = ({ date_taken, testeeName, testName,attempts, score,sten,percentile} )=> {
-   module.exports = (testeeRecords, allStens )=> {
+module.exports = (testeeRecords, allStens) => {
    const today = new Date();
 
    const openingTags = `
@@ -10,14 +10,12 @@
             <title>PDF Report Template</title>
             <style>
                .invoice-box {
-                  margin-left: 24vh
-               max-width: 800px;
-               margin: auto;
+                  
                padding: 30px;
                border: 1px solid #eee;
                box-shadow: 0 0 10px rgba(0, 0, 0, .15);
                font-size: 16px;
-               line-height: 24px;
+               
                font-family: 'Helvetica Neue', 'Helvetica',
                color: #555;
                }
@@ -84,32 +82,37 @@
          </head>
       <body>`;
    const staticScale = `
-      <table  align=center > 
-     
-         <tr >
-            <td width="60" align=center bgcolor="red" > Low</td>
-            <td width="80" align=center bgcolor="yellow" > Average</td>
-            <td width="60" align=center bgcolor="green" > High</td>
-         </tr>
-    
-         </br>
+
+   <table id="tableAve" border="1" style='border-collapse:collapse' align=center> 
+      <tr>
+         <td   width="100" bgcolor="red"     height=" 20"  align=center>Below Average </td>     
+         <td   width="100" bgcolor="#ffc000" height=" 20"  align=center>Lower Average</td>
+         <td   width="100" bgcolor="yellow" height=" 20"  align=center>Average</td>
+         <td   width="100" bgcolor="#92d050" height=" 20"  align=center>Upper Average</td>
+         <td   width="100" bgcolor="#00b050" height=" 20"  align=center>Above Average</td>
+      </tr> 
+         
+   </table>
+   </br> 
+      <table  align=center   > 
+         
          <tr>
-            <td width="20" style="text-align:center; font-size:10px"> Raw Score</td>
-            <td width="210" style="text-align:center; font-size:10px">No.Attempted </td>
-            <td width="20" align=center> 1</td>
-            <td width="20" align=center> 2</td>
-            <td width="20" align=center> 3</td>
-            <td width="20" align=center> 4</td>
-            <td width="20" align=center> 5</td>
-            <td width="20" align=center> 6</td>
-            <td width="20" align=center> 7</td>
-            <td width="20" align=center> 8</td>
-            <td width="20" align=center> 9</td>
-            <td width="20" align=center> 10</td>
-            <td width="150" align=center> </td>
+            <td   width="150" style="font-size:10px" ></td>
+            <td   width="20"   align=center> 1</td>
+            <td   width="20"  align=center>2</td>
+            <td   width="20"   align=center>3</td>
+            <td   width="20"   align=center>4</td>
+            <td   width="20"  align=center>5</td>
+            <td   width="20"  align=center>6</td>
+            <td   width="20"  align=center>7</td>
+            <td   width="20"  align=center>8</td>
+            <td   width="20"  align=center>9</td>
+            <td   width="24"  align=center>10</td>
+            <td   width="100"  style="text-align:right; font-size:10px" style='border-collapse:collapse'> </td>
+            
          </tr>
       </table>
-      <br/>`;
+      `;
    const closingTags = ` 
          </body>
       </html>`;
@@ -118,24 +121,24 @@
    var scoringTableTemplate = ``;
    var count = 1;
    var averageTableTemplate = '';
-    
 
-   
+
+
    testeeRecords.forEach(candidate => {
 
       let stenSum = 0; let itemsFound = 0;
 
-      var allStens  = [];
+      var allStens = [];
 
       allStens = candidate.sten;
       var len = allStens.length;
-     
+
 
       let item = null;
 
       for (let i = 0; i < len; i++) {
          item = allStens[i];
-         if(item.found) {
+         if (item.found) {
             stenSum = item.sten + stenSum;
             itemsFound = itemsFound + 1;
 
@@ -225,13 +228,13 @@
                <td  id ="${count}cell1" width="20" bgcolor="red"  align=center> </td>
                <td  id ="${count}cell2" width="20" bgcolor="red"  align=center> </td>
                <td  id ="${count}cell3" width="20" bgcolor="red"  align=center></td>
-               <td  id ="${count}cell4" width="20" bgcolor="yellow"  align=center></td>
+               <td  id ="${count}cell4" width="20" bgcolor="#ffc000"  align=center></td>
                <td  id ="${count}cell5" width="20" bgcolor="yellow" align=center></td>
                <td  id ="${count}cell6" width="20" bgcolor="yellow" align=center></td>
-               <td  id ="${count}cell7" width="20" bgcolor="yellow" align=center></td>
+               <td  id ="${count}cell7" width="20" bgcolor="#92d050" align=center></td>
                <td  id ="${count}cell8" width="20" bgcolor="green" align=center></td>
                <td  id ="${count}cell9" width="20" bgcolor="green" align=center></td>
-               <td  id ="${count}cell10" width="24" bgcolor="green" align=center></td>
+               <td  id ="${count}cell10" width="20" bgcolor="green" align=center></td>
                <td  id ="${count}cell11" width="100"  style="text-align:right; font-size:10px" style='border-collapse:collapse'> </td>
                
             </tr>
@@ -301,80 +304,91 @@
          </script>`;
 
       body = `
-         <div class="invoice-box" style="background-color: #f5fafa; height: 340vh" style="margin-left: 24vh">
-            <h2  style="text-align:center; font-size:20px">CONFIDENTIAL PSYCHOMETRIC REPORT</h2>
-            <table cellpadding="0" cellspacing="0" >
-               <tr class="top">
-                  <td colspan="2">
-                     <table>
-                        <tr>
-                           <td>
-                              Date Taken : ${candidate.date_taken}
-                           </td>
-                        </tr>
-                     </table>
-                  </td>
-               </tr>
-               <tr class="information">
-                  <td colspan="2">
-                     <table>
-                        <tr>
-                           <td>
-                              Testee name : ${candidate.testeeName}
-                           </td>
-                        </tr>
-                     </table>
-                  </td>
-               </tr>
-               <tr class="information">
-                  <td colspan="2">
-                     <table>
-                        <tr>
-                           <td>
-                              Position : Position
-                           </td>
-                        </tr>
-                     </table>
-                  </td>
-               </tr>
-               <tr class="information">
-                  <td colspan="2">
-                     <table>
-                        <tr>
-                           <td>
-                              Company : Company Name
-                           </td>
-                        </tr>
-                     </table>
-                  </td>
-               </tr>
-                          
-            </table>
-            <div style="margin-left: 12vh">
-               <p>The contents of this report are highly confidential 
-                  and unauthorised persons not directly involved with the 
-                  selection decision may not obtain access to its contents. 
-                  Under NO circumstances may this report 
-                  or a copy of it be given to the candidate it concerns.
-               </p>
-               <p>Psychometric tests must not be used as the
-                  sole determinant of selection decisions. 
-                  Other sources of information like interviews, reference checks, etc.,
-                  should also be considered in making a final decision.
-               </p>
-               <h5 style="text-align:center; font-size:14px">DONE BY EP INDUSTRIAL PSYCHOLOGICAL SERVICES P/L</h5>
+         <div class="invoice-box" style="background-color: #f2f2f2; height: 340vh" style="margin-top:20vh;">
+            
+                     
+            <div style="background-color: #a8d08d; height: 340vh; width:220vh; margin-left:20vh;">
+               <div style="background-color: #8eaadb;height: 340vh; width:220vh;margin-left:8vh"> 
+               
+               
+               <div style="background-color: #1b2e53; height: 30vh; width:220vh">
+                   <h2 style="text-align:center; color: white; font-size:20px; font-family: Candara,">CONFIDENTIAL PSYCHOMETRIC REPORT</h2>
+               </div>
+               <table cellpadding="0" cellspacing="0" >
+                  <tr class="top">
+                     <td colspan="2">
+                        <table>
+                           <tr>
+                              <td>
+                                 Date Taken : ${candidate.date_taken}
+                              </td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr class="information">
+                     <td colspan="2">
+                        <table>
+                           <tr>
+                              <td>
+                                 Testee name : ${candidate.testeeName}
+                              </td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr class="information">
+                     <td colspan="2">
+                        <table>
+                           <tr>
+                              <td>
+                                 Position : Position
+                              </td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr class="information">
+                     <td colspan="2">
+                        <table>
+                           <tr>
+                              <td>
+                                 Company : Company Name
+                              </td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                             
+               </table>
+               <div style="margin-left: 12vh; font-family: Candara, serif">
+                  <p>The contents of this report are highly confidential 
+                     and unauthorised persons not directly involved with the 
+                     selection decision may not obtain access to its contents. 
+                     Under NO circumstances may this report 
+                     or a copy of it be given to the candidate it concerns.
+                  </p>
+                  <p>Psychometric tests must not be used as the
+                     sole determinant of selection decisions. 
+                     Other sources of information like interviews, reference checks, etc.,
+                     should also be considered in making a final decision.
+                  </p>
+                  <h5 style="text-align:center; font-size:14px;font-family: Candara">DONE BY EP INDUSTRIAL PSYCHOLOGICAL SERVICES P/L</h5>
+               </div>
+               </div>
             </div>
+            
             <br />
          </div>
          <div style="height: 16vh">
          </div>
-         <div style="margin-left: 24vh" >
+         <div style="margin-left: 24vh; font-family: Candara, serif" >
             <div style="background-color: #1b2e53; height: 8vh; width:250vh">
-               <h3 style="text-align:center; font-size:14px; color: white" >NON-INTERACTIVE PSYCHOMETRIC TESTING</h3>
+               <h3 style="text-align:center; font-size:14px; color: white;font-family: Candara, serif" >NON-INTERACTIVE PSYCHOMETRIC TESTING</h3>
            </div>
-         <div style="width:250vh">
+           <div style="width:250vh; font-family: Candara">
             <h3 style="text-align:left; font-size:12px" >COGNITIVE ABILITY - CRITICAL REASONING TEST BATTERY</h3>
-            <p>The Critical Reasoning Test (CRT) Battery assesses the candidate’s cognitive ability,
+            <p >The Critical Reasoning Test (CRT) Battery assesses the candidate’s cognitive ability,
                that is, verbal reasoning, numerical reasoning and abstract reasoning skills. It assesses 
                the ability to solve complex problems as well as make meaningful decisions on the basis of information presented.
                The cognitive ability level is then compared with similar other candidates in a given population (norms).
@@ -418,6 +432,6 @@
       count++;
    });
 
-   return openingTags + body + staticScale + scoringTableTemplate+ averageTableTemplate + closingTags;
+   return openingTags + body + staticScale + scoringTableTemplate + averageTableTemplate + closingTags;
 
 };

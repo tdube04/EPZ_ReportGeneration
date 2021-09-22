@@ -69,10 +69,6 @@ useStyles = makeStyles({
       if(candidate.candidate_id === row.candidate_id){
         testeeRecords.push(candidate);
        
-
-        //===========Finding Average sten===========>>
-
-        //==========================>> End
       }
     });
 
@@ -80,7 +76,7 @@ useStyles = makeStyles({
     //   this.createAndDownloadPdf();
     // });
     
-    this.setState({testeeRecords:testeeRecords, allStens:allStens}, function(){
+    this.setState({testeeRecords:testeeRecords}, function(){
       this.createAndDownloadPdf();
     })
 
