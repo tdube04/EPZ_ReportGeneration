@@ -304,7 +304,7 @@ module.exports = (testeeRecords, allStens) => {
          </script>`;
 
       body = `
-         <div class="invoice-box" style="background-color: #f2f2f2; height: 340vh" style="margin-top:20vh;">
+         <div class="invoice-box" style="background-color: #f2f2f2; height: 340vh" style="margin-top:50px;">
             
                      
             <div style="background-color: #a8d08d; height: 340vh; width:220vh; margin-left:20vh;">
@@ -312,7 +312,7 @@ module.exports = (testeeRecords, allStens) => {
                
                
                <div style="background-color: #1b2e53; height: 30vh; width:220vh">
-                   <h2 style="text-align:center; color: white; font-size:20px; font-family: Candara,">CONFIDENTIAL PSYCHOMETRIC REPORT</h2>
+                   <h2 style="text-align:absolute; color: white; font-size:20px; font-family: Candara,">CONFIDENTIAL PSYCHOMETRIC REPORT</h2>
                </div>
                <table cellpadding="0" cellspacing="0" >
                   <tr class="top">
