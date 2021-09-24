@@ -88,8 +88,8 @@ useStyles = makeStyles({
       .then((res) => {
         const pdfBlob = new Blob([res.data], { type: 'application/pdf' });
 
-        var fileName = `${this.state.testeeRecords.candidate_id}`;
-        saveAs(pdfBlob, fileName );
+        
+        saveAs(pdfBlob, "fileName.pdf" );
       })
   }
 
