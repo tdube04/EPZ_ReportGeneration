@@ -8,6 +8,7 @@
 }
 
 .App-header {
+  border-collapse: collapse;
   margin-top: 12;
   background-color: #2e148b;
   min-height: 100vh;

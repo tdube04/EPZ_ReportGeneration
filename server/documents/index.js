@@ -82,39 +82,42 @@
             </head>
          <body>`;
       const staticScale = `
-   
-      <table id="tableAve" border="1" style='border-collapse:collapse' align=center> 
-         <tr>
-            <p align=center style="margin-bottom:2px; margin-top:0px">Sten </p>
-            <td   width="100" bgcolor="red"     height=" 20"  align=center>Below Average </td>     
-            <td   width="100" bgcolor="#ffc000" height=" 20"  align=center>Lower Average</td>
-            <td   width="100" bgcolor="yellow" height=" 20"  align=center>Average</td>
-            <td   width="100" bgcolor="#a9d08e" height=" 20"  align=center>Upper Average</td>
-            <td   width="100" bgcolor="#00b050" height=" 20"  align=center>Above Average</td>
-         </tr> 
-            
-      </table>
+         <div style="margin-left:6vh; margin-right: 4vh"> 
+            <table id="tableAve" border="1" style='border-collapse:collapse' align=center> 
+               <tr>
+                  <p align=center style="margin-bottom:2px; margin-top:0px"> Sten </p>
+
+                  <td   width="107" bgcolor="red"     height=" 20"  align=center>  <p style="font-size:9px">Below Average </p> </td>     
+                  <td   width="35"  bgcolor="#ffc000" height=" 20"  align=center>  <p style="font-size:9px">Lower Average </p> </td>
+                  <td   width="73"  bgcolor="yellow"  height=" 20"  align=center>  <p style="font-size:9px"> Average </p> </td>
+                  <td   width="35"  bgcolor="#a9d08e" height=" 20"  align=center>  <p style="font-size:9px">Upper Average </p> </td>
+                  <td   width="107" bgcolor="#00b050" height=" 20"  align=center>  <p style="font-size:9px">Above Average </p></td>
+                  
+               </tr> 
+                  
+            </table>
+         </div>
       </br> 
-      
-         <table  align=center   > 
-            
+      <div style="margin-left:0vh; margin-right: 6vh">
+         <table align=center>    
             <tr>
-               
-               <td   width="150" style="font-size:10px" ></td>
-               <td   width="20"   align=left> 1</td>
-               <td   width="20"  align=left>2</td>
-               <td   width="20"   align=left>3</td>
-               <td   width="20"   align=left>4</td>
-               <td   width="20"  align=left>5</td>
-               <td   width="20"  align=left>6</td>
-               <td   width="20"  align=left>7</td>
-               <td   width="20"  align=left>8</td>
-               <td   width="20"  align=left>9</td>
-               <td   width="24"  align=left>10</td>
-               <td   width="100"  style="text-align:right; font-size:10px" style='border-collapse:collapse'> </td>
+               <td   width="150" style="font-size:10px" align=center><strong>Test</strong></td>
+               <td   width="31"  align=left>  1 </td>
+               <td   width="31"  align=left>  2 </td>
+               <td   width="31"  align=left>  3 </td>
+               <td   width="31"  align=left>  4 </td>
+               <td   width="31"  align=left>  5 </td>
+               <td   width="31"  align=left>  6 </td>
+               <td   width="31"  align=left>  7 </td>
+               <td   width="31"  align=left>  8 </td>
+               <td   width="31"  align=left>  9 </td>
+               <td   width="31"  align=left>  10 </td>
+               <td   width="60" style="text-align:left; font-size:10px" style='border-collapse:collapse'><strong>%ile</strong></td>
+               <td   width="40" style="text-align:right; font-size:10px" style='border-collapse:collapse'><strong>Comment</strong></td>
                
             </tr>
          </table>
+         </div>
          `;
       const closingTags = ` 
             </body>
@@ -129,7 +132,7 @@
    
       testeeRecords.forEach(candidate => {
    
-          let stenSum = 0; let itemsFound = 3;
+         let stenSum = 0; let itemsFound = 3;
    
          var allStens = [];
    
@@ -154,10 +157,7 @@
            
             return AverageSten;
          }
-   
-         
-   
-   
+
          averageTableTemplate = `
          <div align=center>
             <p style="font-family: Candara"> Overall Cognitive Profile</p>
@@ -227,22 +227,23 @@
 
          scoringTableTemplate += `
          
-            <table id="table${count}" border="1" style='border-collapse:collapse' align=center style="float: left" > 
-               <tr >
+            <table id="table${count}" border="1" style='border-right: 1px;border-left: 1px;border-color: black;border-collapse: collapse' align=center style="float: left" > 
+               <tr  >
                
-                  <td  id ="${count}cell0" width="150" style="font-size:10px" >${candidate.testName}</td>
-                  <td  id ="${count}cell1" width="21" bgcolor="red"  align=center> </td>
-                  <td  id ="${count}cell2" width="21" bgcolor="red"  align=center> </td>
-                  <td  id ="${count}cell3" width="21" bgcolor="red"  align=center></td>
-                  <td  id ="${count}cell4" width="21" bgcolor="#ffc000"  align=center></td>
-                  <td  id ="${count}cell5" width="21" bgcolor="yellow" align=center></td>
-                  <td  id ="${count}cell6" width="21" bgcolor="yellow" align=center></td>
-                  <td  id ="${count}cell7" width="21" bgcolor="#92d050" align=center></td>
-                  <td  id ="${count}cell8" width="21" bgcolor="green" align=center></td>
-                  <td  id ="${count}cell9" width="21" bgcolor="green" align=center></td>
-                  <td  id ="${count}cell10" width="22" bgcolor="green" align=center></td>
-                  <td  id ="${count}cell11" width="100"  style="text-align:right; font-size:10px" style='border-collapse:collapse'> </td>
-                  <td  id ="${count}cell112" width="20"  align=center>${candidate.percentile}%</td>
+                  <td  id ="${count}cell0" height = "8" width="150"  style="font-size:10px" >${candidate.testName}</td>
+                  <td  id ="${count}cell1" height = "8" width="35" bgcolor="red"  align=center> </td>
+                  <td  id ="${count}cell2" height = "8" width="35" bgcolor="red"  align=center> </td>
+                  <td  id ="${count}cell3" height = "8" width="35" bgcolor="red"  align=center></td>
+                  <td  id ="${count}cell4" height = "8" width="35" bgcolor="#ffc000"  align=center></td>
+                  <td  id ="${count}cell5" height = "8" width="35" bgcolor="yellow" align=center></td>
+                  <td  id ="${count}cell6" height = "8" width="35" bgcolor="yellow" align=center></td>
+                  <td  id ="${count}cell7" height = "8" width="35" bgcolor="#92d050" align=center></td>
+                  <td  id ="${count}cell8" height = "8" width="35" bgcolor="green" align=center></td>
+                  <td  id ="${count}cell9" height = "8" width="35" bgcolor="green" align=center></td>
+                  <td  id ="${count}cell10" height = "8" width="35" bgcolor="green" align=center></td>
+                  <td  id ="${count}cell112" height = "8" width="50"  align=right>${candidate.percentile}%</td>
+                  <td  id ="${count}cell11" height = "8" width="100"  style="text-align:right; font-size:10px" style='border-collapse:collapse'> </td>
+                  
                </tr>
    
             </table>
@@ -278,15 +279,15 @@
                      break;
                   case 4:
                      cell4 = document.getElementById("${count}cell4").innerHTML = "*";
-                     cell11 = document.getElementById("${count}cell11").innerHTML = "Average";
+                     cell11 = document.getElementById("${count}cell11").innerHTML = " Lower Average";
                      break;
                   case 5:
                      cell5 = document.getElementById("${count}cell5").innerHTML = "*";
-                     cell11 = document.getElementById("${count}cell11").innerHTML = "Upper Average";
+                     cell11 = document.getElementById("${count}cell11").innerHTML = " Average";
                      break;
                   case 6:
                      cell6 = document.getElementById("${count}cell6").innerHTML = "*";
-                     cell11 = document.getElementById("${count}cell11").innerHTML = "Upper Average";
+                     cell11 = document.getElementById("${count}cell11").innerHTML = "Average";
                      break;
                   case 7:
                      cell7 = document.getElementById("${count}cell7").innerHTML = "*";
@@ -384,16 +385,16 @@
                         should also be considered in making a final decision.
                      </p>
                     
-                  </div>
+                  </div><div style="position:absolute; bottom:1300px; left:0px; height: 70vh; width:56vh" > 
+                  <p style="text-align:center; font-size:12px;font-family: Candara"> DONE BY EP INDUSTRIAL PSYCHOLOGICAL SERVICES P/L </p>
+                  <a href="default.asp">
+                     <img  src="https://i2.wp.com/cleverlogos.co/wp-content/uploads/2018/05/reciepthound_1.jpg?fit=800%2C600&ssl=1"
+                     style="width:100%; max-width:156px;">
+                  </a>
+               </div>
                   </div>
                </div>
-               <div style="position:absolute; bottom:1100px; left:0px; height: 70vh; width:56vh" > 
-            <p style="text-align:center; font-size:12px;font-family: Candara"> DONE BY EP INDUSTRIAL PSYCHOLOGICAL SERVICES P/L </p>
-            <a href="default.asp">
-               <img  src="https://i2.wp.com/cleverlogos.co/wp-content/uploads/2018/05/reciepthound_1.jpg?fit=800%2C600&ssl=1"
-               style="width:100%; max-width:156px;">
-            </a>
-         </div>
+               
                <br />
             </div>
             <div style="height: 16vh">
@@ -445,8 +446,8 @@
    
       return openingTags + body + 
          `
-         <div style= "border: 1px solid black; width:200vh; margin-left:30vh; "> 
-         <div style="height: 15px; border: 1px solid black; text-align:center;font-family: Candara">General Reasoning Profile Chart </div>
+         <div style= "border: 1px solid black; width:220vh; margin-left:30vh; "> 
+         <div style="height: 15px; border: 0.5px solid black; text-align:center;font-family: Candara">General Reasoning Profile Chart </div>
          <div style="height: 15px"></div>
             
             

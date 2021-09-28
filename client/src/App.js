@@ -16,6 +16,7 @@ import TablePagination from '@material-ui/core/TablePagination';
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
+import GetAppIcon from '@material-ui/icons/GetApp';
 
 
 import './App.css';
@@ -130,7 +131,8 @@ useStyles = makeStyles({
                              <TableCell align="center">{row.percentile}</TableCell>
                              <TableCell align="center">{row.sten}</TableCell>
                              <TableCell align="center">{row.date_taken}</TableCell>
-                             <button onClick={this.clickMe.bind(this,row)}>Download PDF</button>
+                             <GetAppIcon onClick={this.clickMe.bind(this,row)}/>
+                             {/* <button onClick={this.clickMe.bind(this,row)}>Download PDF</button> */}
                            </TableRow>
                          ))}
                        </TableBody>
