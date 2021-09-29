@@ -125,7 +125,7 @@
 //                           actions={[
         
 //                             rowData => ({
-//                               icon: GetAppIcon,
+//                               icon: <GetAppIcon onClick={this.clickMe.bind(this)}/>,
 //                               tooltip: 'Delete User',
 //                               // onClick:{clickMe},
                               
@@ -138,12 +138,9 @@
                             
 //                           }}
 //                         />
-  
-                       
-                    
+
 //                  </Paper>  
-//                                 )
-                
+//                                 )    
 //       </div>
 //     );
 //   }

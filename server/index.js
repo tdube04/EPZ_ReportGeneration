@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const pdf = require('html-pdf');
 const cors = require('cors');
+const dotenv =require('dotenv');
 
 const models = require('./items_model');
 const repo = require('./repository');
@@ -10,8 +11,9 @@ const {userInfo} = require('./fetchUser')
 const pdfTemplate = require('./documents');
 
 const app = express();
+dotenv.config();
 
-const port = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -36,11 +38,7 @@ app.get('/items', (req,res) => {
 ////////////////////////
 
 app.get('/', (req, res) => {
-    res.send(`
-      <form method='POST'>
-        <button>Fetch User Information</button>
-      </form>
-    `)
+    res.send('Hello from Report geration API')
   })
     
   // Route to fetch particular user 
@@ -59,4 +57,4 @@ app.get('/fetch-pdf', (req, res) => {
     res.sendFile(`${__dirname}/result.pdf`)
 })
 
-app.listen(port, () => console.log(`Listening on port ${port}`));
+app.listen(PORT, () => console.log(`Listening on port ${PORT}`));

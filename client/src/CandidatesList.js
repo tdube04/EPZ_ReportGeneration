@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { saveAs } from 'file-saver';
 
-import SearchBox from './SearchBox';
+
 
 import "./App.css";
 import MaterialTable from 'material-table';
@@ -21,7 +21,7 @@ import GetAppIcon from '@material-ui/icons/GetApp';
 
 import './App.css';
 
-class App extends Component {
+class CandidatesList extends Component {
   state = {
     name: '',
     testeeName: '',
@@ -33,9 +33,6 @@ class App extends Component {
     date_taken: '',
     candidates:[],
     loading: true,
-
-    //SearchBox
-    searchField: '',
 
     // Test State var
     testeeRecords:[],
@@ -98,25 +95,17 @@ useStyles = makeStyles({
   }
 
   render() {
-
     if(this.state.loading) {
       return <div>loading....</div>;
     }
     if(!this.state.candidates.length) {
       return <div>Didn't get a candidate</div>
     }
-    const {candidates, searchField} = this.state
-      const filteredCandidates = candidates.filter(candidate =>(
-        candidate.testeeName.toLowerCase().includes(searchField.toLocaleLowerCase())
-      ))
-      this.candidates = {filteredCandidates};
     return (
-      
       <div className="App">
 
         <h1>Candidate list</h1>
                   <Paper>
-                    <SearchBox placeholder="Enter a candidate name..." handleChange={(e) => this.setState({searchField: e.target.value})}/>
                    <TableContainer>
                      <Table >
                        <TableHead>
@@ -131,8 +120,7 @@ useStyles = makeStyles({
                            <TableCell align="center">Date Taken</TableCell>
                          </TableRow>
                        </TableHead>
-                       <TableBody >
-                         
+                       <TableBody>
                          {this.state.candidates.map((row) => (
                            <TableRow key={row.candidate_id}>
                              <TableCell align="center" component="th" scope="row">{row.candidate_id} </TableCell>
@@ -157,4 +145,4 @@ useStyles = makeStyles({
   }
 }
 
-export default App;
+export default CandidatesList;
