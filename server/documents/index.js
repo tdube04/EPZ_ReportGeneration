@@ -356,7 +356,7 @@ module.exports = (testeeRecords, allStens) => {
                         should also be considered in making a final decision.
                      </p>
                     
-                  </div><div style="position:absolute; bottom:2300px; left:0px; height: 70vh; width:56vh" > 
+                  </div><div style="position:absolute; bottom:2800px; left:0px; height: 70vh; width:56vh" > 
                   <p style="text-align:center; font-size:12px;font-family: Candara"> DONE BY EP INDUSTRIAL PSYCHOLOGICAL SERVICES P/L </p>
                   <a href="default.asp">
                      <img  src="./logo.jpg"
@@ -367,6 +367,11 @@ module.exports = (testeeRecords, allStens) => {
                </div>
                
                <br />
+
+
+              
+
+
             </div>
             <div style="height: 16vh">
             </div>
@@ -392,9 +397,8 @@ module.exports = (testeeRecords, allStens) => {
                         <td style="font-size:12px">Cognitive Ability</td>
                         
                         <td id ="${count}cell0" style="font-size:12px;font-family: Candara">
-                              ${candidate.testName}
-                               
-                          </td>
+                              ${candidate.testName}  
+                        </td>
                         <td style="font-size:12px;font-family: Candara" >
                            <p style="text-align:center"> Average</p>
                            <p style="text-align:center"> Average </p>
@@ -471,6 +475,8 @@ module.exports = (testeeRecords, allStens) => {
                         </tr>
                      </table>
                   </table>
+
+                  
                   <div style="height: 85vh"></div>
                   <p style="font-family: Candara; font-size:12px"><strong>DETAILED PROFILES</strong></p>
                   <p style="font-family: Candara; font-size:12px">Below are the detailed profiles in their respective order.</p>
@@ -512,8 +518,10 @@ module.exports = (testeeRecords, allStens) => {
                </p>
                <p  style="font-size:12px;font-family: Candara"> The candidate’s cognitive ability profile is provided overleaf.</p>
             </div>
+            
       </div>
             <br />
+            
             
          `;
       count++;

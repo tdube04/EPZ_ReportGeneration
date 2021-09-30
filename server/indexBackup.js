@@ -455,3 +455,8 @@
 //                  averageTableTemplate + closingTags;
      
 //      };
+{/* <table style="width: 100%">
+                  <tr>
+                     <td style="width: 90%">Page <span >2</span> of <span>4</span> pages</td> 
+                  </tr>
+               </table> */}
