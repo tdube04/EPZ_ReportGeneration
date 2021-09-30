@@ -1,8 +1,8 @@
 // module.exports = ({ date_taken, testeeName, testName,attempts, score,sten,percentile} )=> {
-   module.exports = (testeeRecords, allStens) => {
-      const today = new Date();
-   
-      const openingTags = `
+module.exports = (testeeRecords, allStens) => {
+   const today = new Date();
+
+   const openingTags = `
       <!doctype html>
          <html>
             <head>
@@ -81,10 +81,10 @@
                </style>
             </head>
          <body>`;
-      const staticScale = `
+   const staticScale = `
 
          <div style="margin-left:4vh; margin-right: 0vh"> 
-                  <table border="0" cellspacing="4" align="center">
+                  <table border="0" cellspacing="4" align="center" style="width:margin-top:0px">
                      <tr> <td  height = "8" width="110"  style="font-size:11px;" style='border: none' align=center>
                            Test
                         </td>
@@ -97,7 +97,7 @@
                                  <td   width="35"  bgcolor="#ffc000" height=" 20"  align=center>  <p style="font-size:9px">Lower Average </p> </td>
                                  <td   width="73"  bgcolor="yellow"  height=" 20"  align=center>  <p style="font-size:9px"> Average </p> </td>
                                  <td   width="35"  bgcolor="#a9d08e" height=" 20"  align=center>  <p style="font-size:9px">Upper Average </p> </td>
-                                 <td   width="107" bgcolor="#00b050" height=" 20"  align=center>  <p style="font-size:9px">Above Average </p></td> 
+                                 <td   width="107" bgcolor="#008000" height=" 20"  align=center>  <p style="font-size:9px">Above Average </p></td> 
                                  
                               </tr>
                               
@@ -127,46 +127,46 @@
          </div>
          <br/>
          `;
-      const closingTags = ` 
+   const closingTags = ` 
             </body>
          </html>`;
-   
-      var body = ``;
-      var scoringTableTemplate = ``;
-      var count = 1;
-      var averageTableTemplate = '';
-   
-   
-   
-      testeeRecords.forEach(candidate => {
-   
-         let stenSum = 0; let itemsFound = 3;
-   
-         var allStens = [];
-   
-         allStens = candidate.sten;
-   
-         let arry = [];
-         
-         var smallA = arry.push(candidate.sten);
-         
 
-   
-         function calculateAverage(array) {
-            var total = 0;
-            var count = 0;
-            array.forEach(function(item, index) {
-               total += item;
-               
-               count++;
-            });
-           var AverageSten =   total / arry.length;
-           
-           
-            return AverageSten;
-         }
+   var body = ``;
+   var scoringTableTemplate = ``;
+   var count = 1;
+   var averageTableTemplate = '';
 
-         averageTableTemplate = `
+
+
+   testeeRecords.forEach(candidate => {
+
+      let stenSum = 0; let itemsFound = 3;
+
+      var allStens = [];
+
+      allStens = candidate.sten;
+
+      let arry = [];
+
+      var smallA = arry.push(candidate.sten);
+
+
+
+      function calculateAverage(array) {
+         var total = 0;
+         var count = 0;
+         array.forEach(function (item, index) {
+            total += item;
+
+            count++;
+         });
+         var AverageSten = total / arry.length;
+
+
+         return AverageSten;
+      }
+
+      averageTableTemplate = `
          <div align=center>
             <p style="font-family: Candara"> Overall Cognitive Profile</p>
          </div>
@@ -229,30 +229,30 @@
    
    
          `
-      })
-   
-      testeeRecords.forEach(candidate => {
+   })
 
-         scoringTableTemplate += `
-             <div style="margin-left:4vh; margin-right: 0vh"> 
-                  <table border="0" cellspacing="4" align="center" style=" margin-botttom: 60vh">
+   testeeRecords.forEach(candidate => {
+
+      scoringTableTemplate += `
+             <div style="margin-left:4vh; margin-right: 0vh; "> 
+                  <table border="0" cellspacing="4" align="center" style=" margin-botttom: 60vh;">
                      <tr> <td id ="${count}cell0" height = "8" width="110"  style="font-size:7px;" style='border: none' align=center>
-                           ${candidate.testName}
-                        </td>
+                              ${candidate.testName}
+                          </td>
                         <td > 
-                           <table border="1" cellspacing="0">
+                           <table border="1" cellspacing="0" >
                               <tr>
                                  
-                                 <td  id ="${count}cell1" height = "8" width="34" bgcolor="red"  align=center> </td>
-                                 <td  id ="${count}cell2" height = "8" width="34" bgcolor="red"  align=center> </td>
-                                 <td  id ="${count}cell3" height = "8" width="34" bgcolor="red"  align=center></td>
-                                 <td  id ="${count}cell4" height = "8" width="34" bgcolor="#ffc000"  align=center></td>
-                                 <td  id ="${count}cell5" height = "8" width="34" bgcolor="yellow" align=center></td>
-                                 <td  id ="${count}cell6" height = "8" width="34" bgcolor="yellow" align=center></td>
-                                 <td  id ="${count}cell7" height = "8" width="34" bgcolor="#92d050" align=center></td>
-                                 <td  id ="${count}cell8" height = "8" width="34" bgcolor="green" align=center></td>
-                                 <td  id ="${count}cell9" height = "8" width="34" bgcolor="green" align=center></td>
-                                 <td  id ="${count}cell10" height = "8" width="34" bgcolor="green" align=center></td>
+                                 <td  id ="${count}cell1" height = "8" width="34" bgcolor="red"     align=center> </td>
+                                 <td  id ="${count}cell2" height = "8" width="34" bgcolor="red"     align=center> </td>
+                                 <td  id ="${count}cell3" height = "8" width="34" bgcolor="red"     align=center></td>
+                                 <td  id ="${count}cell4" height = "8" width="34" bgcolor="#ffc000" align=center></td>
+                                 <td  id ="${count}cell5" height = "8" width="34" bgcolor="yellow"  align=center></td>
+                                 <td  id ="${count}cell6" height = "8" width="34" bgcolor="yellow"  align=center></td>
+                                 <td  id ="${count}cell7" height = "8" width="34" bgcolor="#a9d08e" align=center></td>
+                                 <td  id ="${count}cell8" height = "8" width="34" bgcolor="green"   align=center></td>
+                                 <td  id ="${count}cell9" height = "8" width="34" bgcolor="green"   align=center></td>
+                                 <td  id ="${count}cell10" height = "8" width="34" bgcolor="green"  align=center></td>
                                  
                               </tr>
                               
@@ -325,8 +325,8 @@
                      break;
                }
             </script>`;
-   
-         body = `
+
+      body = `
          
             <div class="invoice-box" style="background-color: #f2f2f2; height: 340vh" style="margin-top:50px;">
                <div style="background-color: #a8d08d; height: 340vh; width:5vh; margin-left:43vh;">
@@ -356,7 +356,7 @@
                         should also be considered in making a final decision.
                      </p>
                     
-                  </div><div style="position:absolute; bottom:1300px; left:0px; height: 70vh; width:56vh" > 
+                  </div><div style="position:absolute; bottom:2300px; left:0px; height: 70vh; width:56vh" > 
                   <p style="text-align:center; font-size:12px;font-family: Candara"> DONE BY EP INDUSTRIAL PSYCHOLOGICAL SERVICES P/L </p>
                   <a href="default.asp">
                      <img  src="./logo.jpg"
@@ -373,26 +373,130 @@
             <div style="margin-left: 24vh; font-family: Candara" >
                
               <div style="width:200vh; font-family: Candara; font-size:12">
-              
-               <h3 style="text-align:left; font-size:12px; font-family: Candara" >COGNITIVE ABILITY - CRITICAL REASONING TEST BATTERY</h3>
-               <p  style="font-size:12px; font-family: Candara">The Critical Reasoning Test (CRT) Battery assesses the candidate’s cognitive ability,
-                  that is, verbal reasoning, numerical reasoning and abstract reasoning skills. It assesses 
-                  the ability to solve complex problems as well as make meaningful decisions on the basis of information presented.
-                  The cognitive ability level is then compared with similar other candidates in a given population (norms).
-                  The battery consists of the following tests:</p>
-               <p style="font-family: Candara">Verbal Reasoning</p>
+                  <h3 style="text-align:left; font-size:12px; font-family: Candara" >The candidate was assessed on the following domains of occupational psychological functioning:</h3>
+                  <div style="margin-left:9vh; font-size:12px">
+                     <p style="font-size:12px;font-family: Candara; margin-top: 0vh">•	Cognitive Ability    </p>
+                     <p style="font-size:12px;font-family: Candara; margin-top: 0vh">•	Supervisory In-tray  </p>
+                     <p style="font-size:12px;font-family: Candara; margin-top: 0vh">•	Personality          </p>
+                  </div>
+                  <p style="font-size:13px;font-family: Candara; margin-top: 0vh"><strong>SUMMARY REPORT</strong></p>
+                  <p style="font-size:13px;font-family: Candara; margin-top: 0vh">Below is a summary of the various assessment areas:</p>
+
+                  <table  border="1" style='border-collapse:collapse' width="600px">
+                     <tr >
+                        <td width=150px">Key Assessment Area</td>
+                        <td width="220px" align=center>Dimension</td>
+                        <td align="center">Rating</td>
+                     </tr>
+                     <tr height="30px">
+                        <td style="font-size:12px">Cognitive Ability</td>
+                        
+                        <td id ="${count}cell0" style="font-size:12px;font-family: Candara">
+                              ${candidate.testName}
+                               
+                          </td>
+                        <td style="font-size:12px;font-family: Candara" >
+                           <p style="text-align:center"> Average</p>
+                           <p style="text-align:center"> Average </p>
+                           <p style="text-align:center"> Upper  Average</p>
+                        </td>
+                     </tr>
+                     <tr height="30px">
+                        <td style="font-size:12px">Supervisory Competencies </td>
+                        <td style="font-size:12px;font-family: Candara" >
+                           <p> Management of Plans and Priorities</p>
+                           <p> Management of Time</p>
+                           <p> Management of People</p>
+                           <p> Management of Customers</p>
+                           <p> Management of Information</p>
+                           <p> Management of Operational Efficiencies</p>
+                           <p> Management of Change</p>
+                           <p> Management of Results</p>
+                           <p> Management of Self</p>
+                           
+                        </td>
+                        <td style="font-size:12px;font-family: Candara" >
+                           <p  style="text-align:center"> Average</p>
+                           <p style="text-align:center"> Average </p>
+                           <p style="text-align:center"> Upper  Average</p>
+                           <p style="text-align:center"> Upper  Average</p>
+                           <p style="text-align:center"> Upper  Average</p>
+                           <p style="text-align:center"> Lower  Average</p>
+                           <p style="text-align:center"> Upper  Average</p>
+                           <p style="text-align:center"> Upper  Average</p>
+                           <p style="text-align:center"> Upper  Average</p>
+                           <p style="text-align:center"> Upper  Average</p>
+                        </td>
+                     </tr>
+                     <tr height="30px">
+                        <td style="font-size:12px">Personality </td>
+                        <td style="font-size:12px;font-family: Candara" >
+                          
+                           <p> Stress Tolerance</p>
+                           <p> Tough mindedness</p>
+                           <p> Management of Customers</p>
+                           <p> Self-discipline</p>
+                           <p> Sociability</p>
+                           <p> Dominance</p>
+                        </td>
+                        <td style="font-size:12px;font-family: Candara" style="text-align:center" >
+                           <p style="text-align:center"> Average</p>
+                           <p style="text-align:center"> Average </p>
+                           <p style="text-align:center"> Upper  Average</p>
+                           <p style="text-align:center"> Upper  Average</p>
+                           <p style="text-align:center"> Upper  Average</p>
+                        </td>
+                     </tr>
+                     <tr height="30px">
+                        <td style="font-size:12px">Key Strengths </td>
+                        <td style="font-size:12px;font-family: Candara" >To be capitalized on in role. </td>
+                        <td style="font-size:12px;font-family: Candara" >
+                           <p> -Management of plans, priorities and change. </p>
+                           <p> - Dominant and assertive in social encounters.   </p>
+                        </td>
+                     </tr>
+                     <tr height="30px">
+                        <td style="font-size:12px">Key Development Areas </td>
+                        <td style="font-size:10px;font-family: Candara" >To be worked on to enhance success in role.  </td>
+                        <td style="font-size:10px;font-family: Candara" >
+                           <p>-Supervisory competencies presents some developmental opportunity for BD. </p>
+                           
+                        </td>
+                     </tr>
+                     <table border="1" style='border-collapse:collapse'>
+                        <tr height="30px">
+                           <td style="font-size:12px" width="152px">Key Recomendation </td>
+                           <td style="font-size:12px;font-family: Candara" width="450px" align=center>Recomended  </td>
+                           
+                        </tr>
+                     </table>
+                  </table>
+                  <div style="height: 85vh"></div>
+                  <p style="font-family: Candara; font-size:12px"><strong>DETAILED PROFILES</strong></p>
+                  <p style="font-family: Candara; font-size:12px">Below are the detailed profiles in their respective order.</p>
+                  
+
+                  <h3 style="text-align:left; font-size:12px; font-family: Candara" >COGNITIVE ABILITY - CRITICAL REASONING TEST BATTERY</h3>
+                  
+                  <p style="font-size:12px; font-family: Candara">The Critical Reasoning Test (CRT) Battery assesses the candidate’s cognitive ability,
+                     that is, verbal reasoning, numerical reasoning and abstract reasoning skills. It assesses 
+                     the ability to solve complex problems as well as make meaningful decisions on the basis of information presented.
+                     The cognitive ability level is then compared with similar other candidates in a given population (norms).
+                     The battery consists of the following tests:</p>
+
+                  <p style="font-family: Candara; font-size:12px"><strong>Verbal Reasoning</strong></p>
                
                <p  style="font-size:12px;font-family: Candara">The Verbal Reasoning Test assesses a person’s ability to use words in a logical way, 
                   that is, the ability to perceive and understand concepts and ideas verbally. 
                   It assesses one’s ability to make decisions based on given information, as well as the ability to understand, 
                   interpret and use words for the purposes of communication.
                </p>
-               <p style="font-family: Candara">Numerical Reasoning</p>
+               <p style="font-family: Candara;font-size:12px"><strong>Numerical Reasoning Test</strong></p>
                <p  style="font-size:12px">The Numerical Reasoning Tests assesses the candidate’s ability to understand and interpret given 
                   statistical information presented
                   in tabular and graphical form, for work-related decision-making.
                </p>
-               <p style="font-family: Candara">Abstract Reasoning </p>
+               <p style="font-family: Candara;font-size:12px"><strong>Pattern Recognition and Reasoning Test</strong> </p>
                <p  style="font-size:12px">This test assesses the candidate’s ability to understand and follow complex patterns and make judgments
                   for decision-making. It seeks to measure the ability to think logically,
                   imagine concepts and reduce those concepts into practical realities.
@@ -410,20 +514,22 @@
             </div>
       </div>
             <br />
+            
          `;
-         count++;
-      });
-   
-      return openingTags + body + 
-         `
+      count++;
+   });
+
+   return openingTags + body +
+      `<div style="height: 550px"></div>
          <div style= "border: 1px solid black; width:220vh; margin-left:30vh; "> 
-         <div style="height: 15px; border: 0.5px solid black; text-align:center;font-size:14px;font-family: Candara">General Reasoning Profile Chart </div>
-         <hr style= "border: 1px solid #06050a">
-         <div style="height: 15px"></div>
+            
+            <div style="height: 15px; border: 0.5px solid black; text-align:center;font-size:14px;font-family: Candara">General Reasoning Profile Chart </div>
+            <hr style= "border: 1px solid #06050a">
+            <div style="height: 1px"></div>
             
             
                ${staticScale + scoringTableTemplate}
-         </div>`  + 
-               averageTableTemplate + closingTags;
-   
-   };
+         </div>`  +
+      averageTableTemplate + closingTags;
+
+};
