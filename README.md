@@ -21,26 +21,32 @@ Inside: server/document/index.js
 > Instead when l console.log(AverageSten) `it outputs the values of the array instead of the average :) and places  the star on the wrong position.`![1633073196929.png](image/README/1633073196929.png)
 
 ```
-var allStens = [];
+var aveSten = ${calculateAverage(arry)};
+               switch(true) {
+                  case  ((aveSten >= 1) && (aveSten <= 3.9)):
+                   
 
-      allStens = candidate.sten;
+                     cell1 = document.getElementById("cell1").innerHTML = "*";
+                   
+                     break;
+               
+                  case ((aveSten >= 4) && (aveSten <= 4.9)):               
+                     cell2 = document.getElementById("cell2").innerHTML = "*";
+                     break;
+                  case ((aveSten >= 5) && (aveSten <= 6.9)):
+                
+                     cell3 = document.getElementById("cell3").innerHTML = "*";
+                     break;  
+                  case ((aveSten >= 7) && (aveSten <= 7.9)):
+                     cell4 = document.getElementById("cell4").innerHTML = "*";
+                     break;
 
-      let arry = [];
+                  case ((aveSten >= 8) && (aveSten <= 10)):
+                     cell5 = document.getElementById("cell5").innerHTML = "*";
+                     break;
 
-      var smallA = arry.push(candidate.sten);
-
-      function calculateAverage(array) {
-         var total = 0;
-         var count = 0;
-         array.forEach(function (item, index) {
-            total += item;
-            count++;
-         });
-         var AverageSten = total / arry.length;
-
-         //If l console.log(AverageSten) it outputs the values of the array instead of the average :)
-         console.log(AverageSten); 
-
-         return AverageSten;
-      }
+                  default:
+                     console.log("");
+                     break;
+               }
 ```
