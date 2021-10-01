@@ -150,18 +150,17 @@ module.exports = (testeeRecords, allStens) => {
 
       var smallA = arry.push(candidate.sten);
 
-
-
       function calculateAverage(array) {
          var total = 0;
          var count = 0;
          array.forEach(function (item, index) {
             total += item;
-
             count++;
          });
          var AverageSten = total / arry.length;
 
+         //If l console.log(AverageSten) it outputs the values of the array instead of the average :)
+         console.log(AverageSten); 
 
          return AverageSten;
       }
@@ -205,8 +204,7 @@ module.exports = (testeeRecords, allStens) => {
                      
                      break;
                  
-                  case ((aveSten >= 4) && (aveSten <= 4.9)):
-                     case 4.2:
+                  case ((aveSten >= 4) && (aveSten <= 4.9)):                 
                      cell2 = document.getElementById("cell2").innerHTML = "*";
                      break;
                   case ((aveSten >= 5) && (aveSten <= 6.9)):
@@ -216,11 +214,11 @@ module.exports = (testeeRecords, allStens) => {
                   case ((aveSten >= 7) && (aveSten <= 7.9)):
                      cell4 = document.getElementById("cell4").innerHTML = "*";
                      break;
-                  case ((aveSten >= 8) && (aveSten <= 10)):
 
+                  case ((aveSten >= 8) && (aveSten <= 10)):
                      cell5 = document.getElementById("cell5").innerHTML = "*";
-                     
                      break;
+
                   default:
                      console.log("");
                      break;
