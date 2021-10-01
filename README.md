@@ -18,4 +18,29 @@ Inside: server/document/index.js
 >
 > ![1633073285183.png](image/README/1633073285183.png)
 >
-> Instead when l console.log(AverageSten) `it outputs the values of the array instead of the average :)`![1633073196929.png](image/README/1633073196929.png)
+> Instead when l console.log(AverageSten) `it outputs the values of the array instead of the average :) and places  the star on the wrong position.`![1633073196929.png](image/README/1633073196929.png)
+
+```
+var allStens = [];
+
+      allStens = candidate.sten;
+
+      let arry = [];
+
+      var smallA = arry.push(candidate.sten);
+
+      function calculateAverage(array) {
+         var total = 0;
+         var count = 0;
+         array.forEach(function (item, index) {
+            total += item;
+            count++;
+         });
+         var AverageSten = total / arry.length;
+
+         //If l console.log(AverageSten) it outputs the values of the array instead of the average :)
+         console.log(AverageSten); 
+
+         return AverageSten;
+      }
+```
