@@ -18,7 +18,9 @@ Inside: server/document/index.js
 >
 > ![1633073285183.png](image/README/1633073285183.png)
 >
-> Instead when l console.log(AverageSten) `it outputs the values of the array instead of the average :) and places  the star on the wrong position.`![1633073196929.png](image/README/1633073196929.png)
+> Instead when l console.log(AverageSten) `it outputs the values of the array instead of the average :) and places  the star on the wrong position.`
+>
+> ![1633073196929.png](image/README/1633073196929.png)
 
 ```
  var allStens = [];
