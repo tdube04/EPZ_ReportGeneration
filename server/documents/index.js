@@ -135,29 +135,27 @@ module.exports = (testeeRecords, allStens) => {
    var scoringTableTemplate = ``;
    var count = 1;
    var averageTableTemplate = '';
-
-
+   var total = 0;
+   var countRecords = 0;
 
    testeeRecords.forEach(candidate => {
 
-      let stenSum = 0; let itemsFound = 3;
-
+      let stenSum = 0; 
+      let itemsFound = 3;
       var allStens = [];
-
-      allStens = candidate.sten;
-
       let arry = [];
 
+      allStens = candidate.sten;
+   
       var smallA = arry.push(candidate.sten);
-
+      
       function calculateAverage(array) {
-         var total = 0;
-         var count = 0;
          array.forEach(function (item, index) {
-            total += item;
-            count++;
+            total = parseInt(total) + parseInt(item);
+            countRecords++;
          });
-         var AverageSten = total / arry.length;
+
+         var AverageSten = total / countRecords;
 
          //If l console.log(AverageSten) it outputs the values of the array instead of the average :)
          console.log(AverageSten); 
@@ -354,11 +352,11 @@ module.exports = (testeeRecords, allStens) => {
                         should also be considered in making a final decision.
                      </p>
                     
-                  </div><div style="position:absolute; bottom:2800px; left:0px; height: 70vh; width:56vh" > 
-                  <p style="text-align:center; font-size:12px;font-family: Candara"> DONE BY EP INDUSTRIAL PSYCHOLOGICAL SERVICES P/L </p>
+                  </div><div style="position:absolute; bottom:2830px; left:0px; height: 70vh; width:56vh" > 
+                  <p style="text-align:center; font-size:12px;font-family: Candara;margin-left:10px;"> DONE BY EP INDUSTRIAL PSYCHOLOGICAL SERVICES P/L </p>
                   <a href="default.asp">
-                     <img  src="./logo.jpg"
-                     style="width:100%; max-width:156px;">
+                     <img  src="https://cdn.pixabay.com/photo/2021/10/01/10/26/10-26-36-762_150.jpg"
+                     style="width:100%;height:15vh;position:absolute; max-width:156px;margin-left:10px;">
                   </a>
                </div>
                   </div>
