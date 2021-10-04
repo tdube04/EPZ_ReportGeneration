@@ -126,7 +126,7 @@ useStyles = makeStyles({
                            <TableCell align="center">Test Name</TableCell>
                            <TableCell align="center">Attempts</TableCell>
                            <TableCell align="center">Score</TableCell>
-                           <TableCell align="center">Percentile&nbsp;(%)</TableCell>
+                           <TableCell align="center">Percentile   </TableCell>
                            <TableCell align="center">Sten</TableCell>
                            <TableCell align="center">Date Taken</TableCell>
                          </TableRow>
