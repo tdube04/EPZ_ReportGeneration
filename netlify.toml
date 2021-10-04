@@ -1,0 +1,4 @@
+[build]
+  command = "npm run build"
+  publish="C:\Users\Standards\Documents\GitHub\EPZ_ReportGeneration\client\build"
+  base = "C:\Users\Standards\Documents\GitHub\EPZ_ReportGeneration\client"
