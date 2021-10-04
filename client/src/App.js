@@ -44,7 +44,7 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    const url = "http://localhost:5000/items";
+    const url = "https://epz-report-generation.herokuapp.com/items";
     const response = await fetch(url);
     const data =  await response.json();
     this.setState({candidates: data, loading: false});
@@ -116,7 +116,6 @@ useStyles = makeStyles({
 
         <h1>Candidate list</h1>
                   <Paper>
-                    <SearchBox placeholder="Enter a candidate name..." handleChange={(e) => this.setState({searchField: e.target.value})}/>
                    <TableContainer>
                      <Table >
                        <TableHead>

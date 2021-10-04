@@ -35,26 +35,12 @@ app.get('/items', (req,res) => {
     res.send(models.loadItem());
 });
 
-////////////////////////
-
 app.get('/', (req, res) => {
     res.send('Hello from Report geration API')
-  })
-    
-  // Route to fetch particular user 
-  // information using id
-  app.post('/:id', async (req, res) => {
-      
-    // Find user from (id:3f2006d22864b8af)  user  is the candidate
-    const user = await repo.findById(req.params.id)
-    res.send(userInfo(user))
-
-
-  })
-//////////////////////////
+  });
 
 app.get('/fetch-pdf', (req, res) => {
     res.sendFile(`${__dirname}/result.pdf`)
-})
+});
 
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
