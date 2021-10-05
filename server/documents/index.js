@@ -133,6 +133,8 @@ module.exports = (testeeRecords, allStens) => {
 
    var body = ``;
    var scoringTableTemplate = ``;
+   var candidateTestName = ``;
+   var testComment = ``;
    var count = 1;
    var averageTableTemplate = '';
    var total = 0;
@@ -332,10 +334,82 @@ module.exports = (testeeRecords, allStens) => {
                 return initials;
             };
 
-      body = `
-      
+            candidateTestName += `
+               <p id ="${count}p0" style="font-size:12px"> ${candidate.testName}</p>
+               <p id ="${count}p1" style="font-size:12px"> ${testComment}</p>
+               
+            `;
+
+            testComment += `
+
+            
+             <script>
+            var p0 = document.getElementById("${count}p0");
+            var p1 = document.getElementById("${count}p1");
+            var p2 = document.getElementById("${count}p2");
+            var p3 = document.getElementById("${count}p3");
+            var p4 = document.getElementById("${count}p4");
+            var p5 = document.getElementById("${count}p5");
+            var p6 = document.getElementById("${count}p6");
+            var p7 = document.getElementById("${count}p7");
+            var p8 = document.getElementById("${count}p8");
+            var p9 = document.getElementById("${count}p9");
+            var p10 = document.getElementById("${count}p10");
+           
+
+            switch(${candidate.sten}) {
+               case 1:
+                  p1 = document.getElementById("${count}p1").innerHTML ="<p align='center'>Below Average</p>";
               
-         
+                  break;
+               case 2:
+                  p2 = document.getElementById("${count}p2").innerHTML = "<p align='center'>Below Average</p>";
+                  
+                  break;
+               case 3:
+                  p3 = document.getElementById("${count}p3").innerHTML =  "<p align='center'>Below Average</p>";
+                 
+                  break;
+               case 4:
+                  p4 = document.getElementById("${count}p4").innerHTML = "<p align='center'> Lower Average</p>";
+                  
+                  break;
+               case 5:
+                  p5 = document.getElementById("${count}p5").innerHTML =" <p align='center'>Average</p>";
+                  
+                  break;
+               case 6:
+                  p6 = document.getElementById("${count}p6").innerHTML = "<p align='center'>Average</p>";
+                 
+                  break;
+               case 7:
+                  p7 = document.getElementById("${count}p7").innerHTML = "<p align='center'>Upper Average</p>";
+                  
+                  break;
+               case 8:
+                  p8 = document.getElementById("${count}p8").innerHTML = "<p align='center'>Above Average</p>";
+               
+                  break;
+               case 9:
+                  p9 = document.getElementById("${count}p9").innerHTML = "<p align='center'>Above Average</p>";
+
+                  break;
+               case 10:
+                  p10 = document.getElementById("${count}p10").innerHTML ="<p align='center'>Above Average</p>";
+
+                  break;
+               
+               default:
+                  console.log("");
+                  break;
+            }
+         </script>
+            
+            `;
+
+            
+
+          body = `
             <div class="invoice-box" style="background-color: #f2f2f2; height: 340vh" style="margin-top:50px;">
                <div style="background-color: #a8d08d; height: 340vh; width:5vh; margin-left:43vh;">
                   
@@ -400,17 +474,13 @@ module.exports = (testeeRecords, allStens) => {
                      <tr height="30px">
                         <td style="font-size:12px"> <strong>Cognitive Ability </strong></td>
                         
-                        <td  id = "testNameCell" style="font-size:12px;font-family: Candara">
-                           <p style="font-size:12px"> Verbal Reasoning</p>
-                           <p style="font-size:12px"> Numerical Reasoning</p>
-                           <p style="font-size:12px"> Non-verbal Reasoning </p>
-    
-                        </td>
+                        <td  id ="${count}cell0" style="font-size:12px;font-family: Candara"> ${candidateTestName} </td>
                         
                         <td style="font-size:12px;font-family: Candara" >
-                           <p style="text-align:center"> Average</p>
-                           <p style="text-align:center"> Average </p>
-                           <p style="text-align:center"> Upper  Average</p>
+                           <p  id="${count}p1" style="text-align:center"> Lower Average</p>
+                           <p  id="${count}p2" style="text-align:center"> Average</p>
+                           <p  id="${count}p3" style="text-align:center">Below Average </p>
+
                         </td>
                      </tr>
                      <tr height="30px">
@@ -530,6 +600,8 @@ module.exports = (testeeRecords, allStens) => {
             
       </div>
             <br />
+
+           
          `;
       count++;
    });
