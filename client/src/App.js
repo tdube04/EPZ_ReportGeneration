@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import axios from 'axios';
 import { saveAs } from 'file-saver';
 
 import SearchBox from './SearchBox';
+import Navbar from './Navbar';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Tooltip, Button } from "reactstrap"
+
 
 import "./App.css";
 import MaterialTable from 'material-table';
@@ -17,6 +22,12 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import GetAppIcon from '@material-ui/icons/GetApp';
+
+import Box from '@mui/material/Box';
+import LinearProgress from '@mui/material/LinearProgress';
+import Stack from '@mui/material/Stack';
+import CircularProgress from '@mui/material/CircularProgress';
+
 
 
 import './App.css';
@@ -100,7 +111,19 @@ useStyles = makeStyles({
   render() {
 
     if(this.state.loading) {
-      return <div>loading....</div>;
+      return ( 
+        <div style={{
+          position: 'absolute', left: '50%', top: '50%',
+          transform: 'translate(-50%, -50%)'
+      }}>
+           <Stack sx={{ color: 'grey.500' }} spacing={2} direction="row">
+            <CircularProgress color="secondary" />
+            <CircularProgress color="success" />
+            <CircularProgress color="inherit" />
+          </Stack>
+        </div>
+      
+     );
     }
     if(!this.state.candidates.length) {
       return <div>Didn't get a candidate</div>
@@ -111,11 +134,11 @@ useStyles = makeStyles({
       ))
       this.candidates = {filteredCandidates};
     return (
-      
-      <div className="App">
-
-        <h1>Candidate list</h1>
+      <Router>
+          <div className="App">
+        <Navbar fixed="top" sticky="top"/>
                   <Paper>
+                  
                    <TableContainer>
                      <Table >
                        <TableHead>
@@ -152,6 +175,9 @@ useStyles = makeStyles({
                    
                  </Paper>     
       </div>
+
+      </Router>
+      
     );
   }
 }

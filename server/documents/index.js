@@ -84,29 +84,29 @@ module.exports = (testeeRecords, allStens) => {
    const staticScale = `
 
          <div style="margin-left:4vh; margin-right: 0vh"> 
-                  <table border="0" cellspacing="4" align="center" style="width:margin-top:0px">
-                     <tr> <td  height = "8" width="110"  style="font-size:11px;" style='border: none' align=center>
-                           Test
-                        </td>
-                        <td > 
-                           <table border="1" cellspacing="0">
-                              <tr>
-                                 <p align=center style="margin-bottom:2px;margin-top:2px;font-size:10px"> Sten </p>
-                     
-                                 <td   width="107" bgcolor="red"     height=" 20"  align=center>  <p style="font-size:9px">Below Average </p> </td>     
-                                 <td   width="35"  bgcolor="#ffc000" height=" 20"  align=center>  <p style="font-size:9px">Lower Average </p> </td>
-                                 <td   width="73"  bgcolor="yellow"  height=" 20"  align=center>  <p style="font-size:9px"> Average </p> </td>
-                                 <td   width="35"  bgcolor="#a9d08e" height=" 20"  align=center>  <p style="font-size:9px">Upper Average </p> </td>
-                                 <td   width="107" bgcolor="#00b050" height=" 20"  align=center>  <p style="font-size:9px">Above Average </p></td> 
-                                 
-                              </tr>
-                              
-                           </table>
-                        </td>
-                        <td  cellpadding="4" height = "10" width="20"  align=right style="font-size:11px">%ile</td>
-                        <td   height = "8" width="100"  style="text-align:center; font-size:11px" style='border-collapse:collapse'>Comment </td>
+            <table border="0" cellspacing="4" align="center" style="width:margin-top:0px">
+               <tr> <td  height = "8" width="110"  style="font-size:11px;" style='border: none' align=center>
+                     Test
+                  </td>
+                  <td > 
+                     <table border="1" cellspacing="0">
+                        <tr>
+                           <p align=center style="margin-bottom:2px;margin-top:2px;font-size:10px"> Sten </p>
+               
+                           <td   width="107" bgcolor="red"     height=" 20"  align=center>  <p style="font-size:9px">Below Average </p> </td>     
+                           <td   width="35"  bgcolor="#ffc000" height=" 20"  align=center>  <p style="font-size:9px">Lower Average </p> </td>
+                           <td   width="73"  bgcolor="yellow"  height=" 20"  align=center>  <p style="font-size:9px"> Average </p> </td>
+                           <td   width="35"  bgcolor="#a9d08e" height=" 20"  align=center>  <p style="font-size:9px">Upper Average </p> </td>
+                           <td   width="107" bgcolor="#00b050" height=" 20"  align=center>  <p style="font-size:9px">Above Average </p></td> 
+                           
+                        </tr>
+                        
                      </table>
-                  </div>
+                  </td>
+                  <td  cellpadding="4" height = "10" width="20"  align=right style="font-size:11px">%ile</td>
+                  <td   height = "8" width="100"  style="text-align:center; font-size:11px" style='border-collapse:collapse'>Comment </td>
+               </table>
+            </div>
        
       <div style="margin-left:12vh; margin-right: 6vh">
          <table align=center>    
@@ -165,27 +165,29 @@ module.exports = (testeeRecords, allStens) => {
       }
 
       averageTableTemplate = `
-         <div align=center>
-            <p style="font-family: Candara ; font-size:12px"> Overall Cognitive Profile</p>
+         <div style="margin-left:50px">
+            <div align=center>
+               <p style="font-family: Candara ; font-size:14px"><strong> Overall Cognitive Profile</strong></p>
+            </div>
+            <table id="tableAve" border="1" style='border-collapse:collapse' align=center> 
+            <tr>
+               <td   width="120" bgcolor="red"     height=" 20"  align=center>Below Average </td>     
+               <td   width="120" bgcolor="#ffc000" height=" 20"  align=center>Lower Average</td>
+               <td   width="120" bgcolor="#92d050" height=" 20"  align=center>Average</td>
+               <td   width="120" bgcolor="#70ad47" height=" 20"  align=center>Upper Average</td>
+               <td   width="120" bgcolor="#00b050" height=" 20"  align=center>Above Average</td>
+            </tr>
+            <tr>
+               <td  id ="cell1" width="120" height=" 20" align=center style="font-size: 14px">   </td>     
+               <td  id ="cell2" width="120" height=" 20" align=center style="font-size: 14px">   </td>
+               <td  id ="cell3" width="120" height=" 20" align=center style="font-size: 14px">   </td>
+               <td  id ="cell4" width="120" height=" 20" align=center style="font-size: 14px">   </td>
+               <td  id ="cell5" width="120" height=" 20" align=center style="font-size: 14px">   </td>
+            </tr>
+      
+            </table>
          </div>
-         <table id="tableAve" border="1" style='border-collapse:collapse' align=center> 
-         <tr>
-            <td   width="100" bgcolor="red"     height=" 20"  align=center>Below Average </td>     
-            <td   width="100" bgcolor="#ffc000" height=" 20"  align=center>Lower Average</td>
-            <td   width="100" bgcolor="#92d050" height=" 20"  align=center>Average</td>
-            <td   width="100" bgcolor="#70ad47" height=" 20"  align=center>Upper Average</td>
-            <td   width="100" bgcolor="#00b050" height=" 20"  align=center>Above Average</td>
-         </tr>
-         <tr>
-            <td  id ="cell1" width="100" height=" 20" align=center style="font-size: 14px">   </td>     
-            <td  id ="cell2" width="100" height=" 20" align=center style="font-size: 14px">   </td>
-            <td  id ="cell3" width="100" height=" 20" align=center style="font-size: 14px">   </td>
-            <td  id ="cell4" width="100" height=" 20" align=center style="font-size: 14px">   </td>
-            <td  id ="cell5" width="100" height=" 20" align=center style="font-size: 14px">   </td>
-         </tr>
-   
-      </table>
-      <br/>
+         <br/>
    
       <script>
                var cell1 = document.getElementById("cell1");
@@ -240,13 +242,13 @@ module.exports = (testeeRecords, allStens) => {
                            <table border="1" cellspacing="0" style="border-color: #000000;">
                               <tr>
                                  
-                                 <td  id ="${count}cell1" height = "20" width="34" bgcolor="red" style="font-size: 10px"     align=center> </td>
-                                 <td  id ="${count}cell2" height = "20" width="34" bgcolor="red"  style="font-size: 10px"      align=center> </td>
-                                 <td  id ="${count}cell3" height = "20" width="34" bgcolor="red"   style="font-size: 10px"     align=center></td>
+                                 <td  id ="${count}cell1" height = "20" width="34" bgcolor="red" style="font-size: 10px"         align=center> </td>
+                                 <td  id ="${count}cell2" height = "20" width="34" bgcolor="red"  style="font-size: 10px"        align=center> </td>
+                                 <td  id ="${count}cell3" height = "20" width="34" bgcolor="red"   style="font-size: 10px"       align=center></td>
                                  <td  id ="${count}cell4" height = "20" width="34" bgcolor="#ffc000"  style="font-size: 10px"    align=center></td>
-                                 <td  id ="${count}cell5" height = "20" width="34" bgcolor="yellow" style="font-size: 10px"    align=center></td>
-                                 <td  id ="${count}cell6" height = "20" width="34" bgcolor="yellow" style="font-size: 10px"    align=center></td>
-                                 <td  id ="${count}cell7" height = "20" width="34" bgcolor="#a9d08e" style="font-size: 10px"    align=center></td>
+                                 <td  id ="${count}cell5" height = "20" width="34" bgcolor="yellow" style="font-size: 10px"      align=center></td>
+                                 <td  id ="${count}cell6" height = "20" width="34" bgcolor="yellow" style="font-size: 10px"      align=center></td>
+                                 <td  id ="${count}cell7" height = "20" width="34" bgcolor="#a9d08e" style="font-size: 10px"     align=center></td>
                                  <td  id ="${count}cell8" height = "20" width="34" bgcolor="#00b050" style="font-size: 10px"     align=center></td>
                                  <td  id ="${count}cell9" height = "20" width="34" bgcolor="#00b050"  style="font-size: 10px"    align=center></td>
                                  <td  id ="${count}cell10" height = "20" width="34" bgcolor="#00b050" style="font-size: 10px"    align=center></td>
@@ -336,14 +338,11 @@ module.exports = (testeeRecords, allStens) => {
 
             candidateTestName += `
                <p id ="${count}p0" style="font-size:12px"> ${candidate.testName}</p>
-               <p id ="${count}p1" style="font-size:12px"> ${testComment}</p>
                
             `;
 
             testComment += `
-
-            
-             <script>
+            <script>
             var p0 = document.getElementById("${count}p0");
             var p1 = document.getElementById("${count}p1");
             var p2 = document.getElementById("${count}p2");
@@ -358,59 +357,64 @@ module.exports = (testeeRecords, allStens) => {
            
 
             switch(${candidate.sten}) {
+               case 0:
+                  cell11 = document.getElementById("${count}cell11").innerHTML = "<p align='center'>Invalid Sten</p>";
+                  break;
                case 1:
-                  p1 = document.getElementById("${count}p1").innerHTML ="<p align='center'>Below Average</p>";
-              
+                  p1 = document.getElementById("${count}cell1").innerHTML = "&diams;";
+                  cell11 = document.getElementById("${count}cell11").innerHTML = "<p align='center'>Below Average</p>";
                   break;
                case 2:
-                  p2 = document.getElementById("${count}p2").innerHTML = "<p align='center'>Below Average</p>";
-                  
+                  cell2 = document.getElementById("${count}cell2").innerHTML = "&diams;";
+                  cell11 = document.getElementById("${count}cell11").innerHTML = "<p align='center'>Below Average</p>";
                   break;
                case 3:
-                  p3 = document.getElementById("${count}p3").innerHTML =  "<p align='center'>Below Average</p>";
-                 
+                  cell3 = document.getElementById("${count}cell3").innerHTML = "&diams;";
+                  cell11 = document.getElementById("${count}cell11").innerHTML = "<p align='center'>Below Average</p>";
                   break;
                case 4:
-                  p4 = document.getElementById("${count}p4").innerHTML = "<p align='center'> Lower Average</p>";
-                  
+                  cell4 = document.getElementById("${count}cell4").innerHTML = "&diams;";
+                  cell11 = document.getElementById("${count}cell11").innerHTML = "<p align='center'> Lower Average</p>";
                   break;
                case 5:
-                  p5 = document.getElementById("${count}p5").innerHTML =" <p align='center'>Average</p>";
-                  
+                  cell5 = document.getElementById("${count}cell5").innerHTML = "&diams;";
+                  cell11 = document.getElementById("${count}cell11").innerHTML = " <p align='center'>Average</p>";
                   break;
                case 6:
-                  p6 = document.getElementById("${count}p6").innerHTML = "<p align='center'>Average</p>";
-                 
+                  cell6 = document.getElementById("${count}cell6").innerHTML = "&diams;";
+                  cell11 = document.getElementById("${count}cell11").innerHTML = "<p align='center'>Average</p>";
                   break;
                case 7:
-                  p7 = document.getElementById("${count}p7").innerHTML = "<p align='center'>Upper Average</p>";
-                  
+                  cell7 = document.getElementById("${count}cell7").innerHTML = "&diams;";
+                  cell11 = document.getElementById("${count}cell11").innerHTML = "<p align='center'>Upper Average</p>";
                   break;
                case 8:
-                  p8 = document.getElementById("${count}p8").innerHTML = "<p align='center'>Above Average</p>";
-               
+                  cell8 = document.getElementById("${count}cell8").innerHTML = "&diams;";
+                  cell11 = document.getElementById("${count}cell11").innerHTML = "<p align='center'>Above Average</p>";
                   break;
                case 9:
-                  p9 = document.getElementById("${count}p9").innerHTML = "<p align='center'>Above Average</p>";
-
+                  cell9 = document.getElementById("${count}cell9").innerHTML = "&diams;";
+                  cell11 = document.getElementById("${count}cell11").innerHTML = "<p align='center'>Above Average</p>";
                   break;
                case 10:
-                  p10 = document.getElementById("${count}p10").innerHTML ="<p align='center'>Above Average</p>";
-
+                  cell10 = document.getElementById("${count}cell10").innerHTML = "&diams;";
+                  cell11 = document.getElementById("${count}cell11").innerHTML = "<p align='center'>Above Average</p>";
                   break;
                
                default:
-                  console.log("");
+                  cell11 = document.getElementById("${count}cell11").innerHTML = "<p align='center'>Invalid Sten</p>";
                   break;
             }
          </script>
-            
             `;
 
             
 
           body = `
+            
             <div class="invoice-box" style="background-color: #f2f2f2; height: 340vh" style="margin-top:50px;">
+
+            
                <div style="background-color: #a8d08d; height: 340vh; width:5vh; margin-left:43vh;">
                   
                   <div style="background-color: #8eaadb;height: 260vh; width:200vh;margin-left:5vh"> 
@@ -437,16 +441,21 @@ module.exports = (testeeRecords, allStens) => {
                         Other sources of information like interviews, reference checks, etc.,
                         should also be considered in making a final decision.
                      </p>
+                     
+
+                     <div style="position:absolute; bottom:2875px; left:0px; height: 70vh; width:56vh;" > 
+                     <p style="text-align:center; font-size:12px;font-family: Candara;margin-left:10px;"> DONE BY EP INDUSTRIAL PSYCHOLOGICAL SERVICES P/L </p>
+                     <a href="default.asp">
+                        <img  src="https://cdn.pixabay.com/photo/2021/10/01/10/26/10-26-36-762_150.jpg"
+                           style="width:100%;height:15vh;position:absolute; max-width:156px;margin-left:10px;">
+                     </a>
+               </div>
+                 
                     
-                  </div><div style="position:absolute; bottom:2830px; left:0px; height: 70vh; width:56vh" > 
-                  <p style="text-align:center; font-size:12px;font-family: Candara;margin-left:10px;"> DONE BY EP INDUSTRIAL PSYCHOLOGICAL SERVICES P/L </p>
-                  <a href="default.asp">
-                     <img  src="https://cdn.pixabay.com/photo/2021/10/01/10/26/10-26-36-762_150.jpg"
-                     style="width:100%;height:15vh;position:absolute; max-width:156px;margin-left:10px;">
-                  </a>
-               </div>
                   </div>
-               </div>
+                  
+            </div>
+         </div>
                
                <br />
 
@@ -474,12 +483,15 @@ module.exports = (testeeRecords, allStens) => {
                      <tr height="30px">
                         <td style="font-size:12px"> <strong>Cognitive Ability </strong></td>
                         
-                        <td  id ="${count}cell0" style="font-size:12px;font-family: Candara"> ${candidateTestName} </td>
+                        <td  id ="${count}cell0" style="font-size:12px;font-family: Candara">
+                        ${candidateTestName}
+                        </td>
                         
                         <td style="font-size:12px;font-family: Candara" >
-                           <p  id="${count}p1" style="text-align:center"> Lower Average</p>
-                           <p  id="${count}p2" style="text-align:center"> Average</p>
-                           <p  id="${count}p3" style="text-align:center">Below Average </p>
+
+                           <p  id="${count}p0" style="text-align:center"> Average</p>
+                           <p  id="${count}p0" style="text-align:center"> Lower Average</p>
+                           <p  id="${count}p0" style="text-align:center"> Above Average</p>
 
                         </td>
                      </tr>
@@ -600,8 +612,6 @@ module.exports = (testeeRecords, allStens) => {
             
       </div>
             <br />
-
-           
          `;
       count++;
    });
