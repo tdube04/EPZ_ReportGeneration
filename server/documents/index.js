@@ -559,7 +559,7 @@ module.exports = (testeeRecords, allStens) => {
                      </tr>
                      <table border="1" style='border-collapse:collapse'>
                         <tr height="30px">
-                           <td style="font-size:12px" width="152px"><strong>Recomendation </strong></td>
+                           <td style="font-size:12px" width="152px"><strong>Recommendation </strong></td>
                            <td style="font-size:12px;font-family: Candara" width="450px" align=center>Recommended  </td>
                            
                         </tr>

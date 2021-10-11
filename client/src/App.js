@@ -55,11 +55,12 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    const url = "https://epz-report-generation.herokuapp.com/items";
+    const url = "https://epz-report-generation.herokuapp.com/request";
     const response = await fetch(url);
     const data =  await response.json();
     this.setState({candidates: data, loading: false});
   }
+
 
 useStyles = makeStyles({
     table: {
