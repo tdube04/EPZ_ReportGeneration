@@ -55,7 +55,7 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    const url = "https://epz-report-generation.herokuapp.com/request";
+    const url = "https://reportgeneration.bradfields.co.zw/items";
     const response = await fetch(url);
     const data =  await response.json();
     this.setState({candidates: data, loading: false});
