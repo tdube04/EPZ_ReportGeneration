@@ -1,36 +1,25 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import axios from 'axios';
 import { saveAs } from 'file-saver';
-
-import SearchBox from './SearchBox';
 import Navbar from './Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Tooltip, Button } from "reactstrap"
-
-
-import "./App.css";
-import MaterialTable from 'material-table';
 
 import { makeStyles } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableContainer from "@material-ui/core/TableContainer";
-import TablePagination from '@material-ui/core/TablePagination';
+
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import GetAppIcon from '@material-ui/icons/GetApp';
-
-import Box from '@mui/material/Box';
-import LinearProgress from '@mui/material/LinearProgress';
 import Stack from '@mui/material/Stack';
 import CircularProgress from '@mui/material/CircularProgress';
+import "./App.css";
 
 
-
-import './App.css';
 
 class App extends Component {
   state = {
@@ -55,7 +44,7 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    const url = "https://epz-report-generation.herokuapp.com/request";
+    const url = "https://reportgeneration.bradfields.co.zw/items";
     const response = await fetch(url);
     const data =  await response.json();
     this.setState({candidates: data, loading: false});
@@ -79,7 +68,6 @@ useStyles = makeStyles({
 
   async clickMe  (row){
     var testeeRecords = [];
-    var allStens  = [];
 
     this.state.candidates.forEach(candidate => {
       if(candidate.candidate_id === row.candidate_id){
@@ -99,8 +87,8 @@ useStyles = makeStyles({
   }
 
   createAndDownloadPdf = () => {
-    axios.post('/create-pdf', this.state.testeeRecords)
-      .then(() => axios.get('fetch-pdf', { responseType: 'blob' }))
+    axios.post('https://reportgeneration.bradfields.co.zw/create-pdf', this.state.testeeRecords)
+      .then(() => axios.get('https://reportgeneration.bradfields.co.zw/fetch-pdf', { responseType: 'blob' }))
       .then((res) => {
         const pdfBlob = new Blob([res.data], { type: 'application/pdf' });
 

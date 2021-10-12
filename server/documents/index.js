@@ -443,7 +443,7 @@ module.exports = (testeeRecords, allStens) => {
                      </p>
                      
 
-                     <div style="position:absolute; bottom:2875px; left:0px; height: 70vh; width:56vh;" > 
+                     <div style="position:absolute; bottom:2375px; left:0px; height: 70vh; width:56vh;" > 
                      <p style="text-align:center; font-size:12px;font-family: Candara;margin-left:10px;"> DONE BY EP INDUSTRIAL PSYCHOLOGICAL SERVICES P/L </p>
                      <a href="default.asp">
                         <img  src="https://cdn.pixabay.com/photo/2021/10/01/10/26/10-26-36-762_150.jpg"
@@ -481,7 +481,7 @@ module.exports = (testeeRecords, allStens) => {
                         <td align="center" style="font-family: Candara; font-size:13px">              <strong> Rating              </strong></td>
                      </tr>
                      <tr height="30px">
-                        <td style="font-size:12px"> <strong>Cognitive Ability </strong></td>
+                        <td style="font-size:12px;text-align:center"> <strong>Cognitive Ability </strong></td>
                         
                         <td  id ="${count}cell0" style="font-size:12px;font-family: Candara">
                         ${candidateTestName}
@@ -496,9 +496,9 @@ module.exports = (testeeRecords, allStens) => {
                         </td>
                      </tr>
                      <tr height="30px">
-                        <td style="font-size:12px"> <strong>Supervisory Competencies </strong></td>
+                        <td style="font-size:12px;text-align:center"> <strong>Supervisory Competencies </strong></td>
                         <td style="font-size:12px;font-family: Candara" >
-                           <p> Management of Plans and Priorities</p>
+                           <p style="margin-bottom: 0px"> Management of Plans and Priorities</p>
                            <p> Management of Time</p>
                            <p> Management of People</p>
                            <p> Management of Customers</p>
@@ -524,7 +524,7 @@ module.exports = (testeeRecords, allStens) => {
                         </td>
                      </tr>
                      <tr height="30px">
-                        <td style="font-size:12px"><strong>Personality </strong></td>
+                        <td style="font-size:12px;text-align:center"><strong>Personality </strong></td>
                         <td style="font-size:12px;font-family: Candara" >
                           
                            <p> Stress Tolerance</p>
@@ -542,7 +542,7 @@ module.exports = (testeeRecords, allStens) => {
                         </td>
                      </tr>
                      <tr height="30px">
-                        <td style="font-size:12px"> <strong>Key Strengths </strong></td>
+                        <td style="font-size:12px;text-align:center"> <strong>Key Strengths </strong></td>
                         <td style="font-size:12px;font-family: Candara" >To be capitalized on in role. </td>
                         <td style="font-size:12px;font-family: Candara" >
                            <p> -Management of plans, priorities and change. </p>
@@ -550,7 +550,7 @@ module.exports = (testeeRecords, allStens) => {
                         </td>
                      </tr>
                      <tr height="30px">
-                        <td style="font-size:12px"> <strong> Key Development Areas </strong></td>
+                        <td style="font-size:12px;text-align:center"> <strong> Key Development Areas </strong></td>
                         <td style="font-size:12px;font-family: Candara" >To be worked on to enhance success in role.  </td>
                         <td style="font-size:12px;font-family: Candara" >
                            <p>-Supervisory competencies presents some developmental opportunity for BD. </p>
@@ -559,7 +559,7 @@ module.exports = (testeeRecords, allStens) => {
                      </tr>
                      <table border="1" style='border-collapse:collapse'>
                         <tr height="30px">
-                           <td style="font-size:12px" width="152px"><strong>Recommendation </strong></td>
+                           <td style="font-size:12px;" align=center width="152px"><strong>Recommendation </strong></td>
                            <td style="font-size:12px;font-family: Candara" width="450px" align=center>Recommended  </td>
                            
                         </tr>
@@ -575,7 +575,7 @@ module.exports = (testeeRecords, allStens) => {
                   <h3 style="text-align:left; font-size:12px; font-family: Candara" >1. COGNITIVE ABILITY</h3>
                   <h3 style="text-align:left; font-size:12px; font-family: Candara" >GENERAL REASONING TEST BATTERY</h3>
                   
-                  <p style="font-size:12px; font-family: Candara">The General Reasoning Test (GRT) Battery assesses the candidate’s cognitive ability,
+                  <p style="font-size:12px; font-family: Candara;text-align: justify; text-justify: inter-word;">The General Reasoning Test (GRT) Battery assesses the candidate’s cognitive ability,
                      that is, verbal reasoning, numerical reasoning and abstract reasoning skills. It assesses 
                      the ability to solve complex problems as well as make meaningful decisions on the basis of information presented.
                      The cognitive ability level is then compared with similar other candidates in a given population (norms).
@@ -583,31 +583,31 @@ module.exports = (testeeRecords, allStens) => {
 
                   <p style="font-family: Candara; font-size:12px"><strong>Verbal Reasoning Test</strong></p>
                
-               <p  style="font-size:12px;font-family: Candara">The Verbal Reasoning Test assesses a person’s ability to use words in a logical way, 
+               <p  style="font-size:12px;font-family: Candara;text-align: justify; text-justify: inter-word;">The Verbal Reasoning Test assesses a person’s ability to use words in a logical way, 
                   that is, the ability to perceive and understand concepts and ideas verbally. 
                   It assesses one’s ability to make decisions based on given information, as well as the ability to understand, 
                   interpret and use words for the purposes of communication.
                </p>
                <p style="font-family: Candara;font-size:12px"><strong>Numerical Reasoning Test</strong></p>
-               <p  style="font-size:12px">The Numerical Reasoning Tests assesses the candidate’s ability to understand and interpret given 
+               <p  style="font-size:12px;text-align: justify; text-justify: inter-word;">The Numerical Reasoning Tests assesses the candidate’s ability to understand and interpret given 
                   statistical information presented
                   in tabular and graphical form, for work-related decision-making.
                </p>
                <p style="font-family: Candara;font-size:12px"><strong>Pattern Recognition and Reasoning Test</strong> </p>
-               <p  style="font-size:12px">This test assesses the candidate’s ability to understand and follow complex patterns and make judgments
+               <p  style="font-size:12px;text-align: justify; text-justify: inter-word;">This test assesses the candidate’s ability to understand and follow complex patterns and make judgments
                   for decision-making. It seeks to measure the ability to think logically,
                   imagine concepts and reduce those concepts into practical realities.
                </p>
-               <p  style="font-size:12px" style="font-family: Candara">The cognitive ability level is then compared with similar other candidates in a given population (norms).
+               <p style="font-family: Candara;text-align: justify; text-justify: inter-word;font-size:12px">The cognitive ability level is then compared with similar other candidates in a given population (norms).
                   As a result a standard score (sten) and a percentile rank (%ile) are used to interpret the performance on this test battery and are given to 
                   indicate where one is in comparison with similar candidates in the population who took the same test.  Stens (standard ten) rank candidates’ performance on a scale of 1 (lowest)  to 10,  (highest), in comparison with a representative sample of similar others. Percentiles (%ile) provide the relative standing of the candidate’s performance on the test on a scale of 1 to 100, that is, 
                   when compared again to a representative sample of similar others who took the same test. 
                </p>
-               <p  style="font-size:12px; font-family: Candara">For example, performance at 80%ile means that one performed better
+               <p  style="font-size:12px; font-family: Candara;text-align: justify; text-justify: inter-word;">For example, performance at 80%ile means that one performed better
                   than 79% of a comparable sample. So those with higher Stens and percentiles would have 
-                  performed better than those with lower Stens and percentiles. 
+                  performed better than those with lower Stens and percentiles. The candidate’s cognitive ability profile is provided below.
                </p>
-               <p  style="font-size:12px;font-family: Candara"> The candidate’s cognitive ability profile is provided overleaf.</p>
+               
             </div>
             
       </div>
@@ -617,14 +617,12 @@ module.exports = (testeeRecords, allStens) => {
    });
 
    return openingTags + body +
-      `<div style="height: 550px"></div>
-         <div style= "border: 1px solid black; width:220vh; margin-left:30vh;margin-right:50px "> 
+      `<div style="height: 2px"></div>
+         <div style= "border: 1px solid black; width:200vh; margin-left:24vh;margin-right:60px "> 
             
             <div style="height: 6px; border: 0.5px solid black; text-align:center;font-size:11px;font-family: Candara; margin-bottom:1vh">General Reasoning Profile Chart </div>
             <hr style= "border: 1px solid #06050a">
-            <div style="height: 1px"></div>
-            
-            
+            <div style="height: 1px;margin-right:60px"></div>
                ${staticScale + scoringTableTemplate}
                <p align="center" style="font-size:10px;font-family: Candara;"> <strong> Norms Used: Comparable Supervisory Level </strong> </p> 
          </div>`  +
