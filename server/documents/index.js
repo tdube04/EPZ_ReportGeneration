@@ -1,10 +1,13 @@
 // module.exports = ({ date_taken, testeeName, testName,attempts, score,sten,percentile} )=> {
 module.exports = (testeeRecords, allStens) => {
-   const today = new Date();
+    const today = new Date();
 
-   const openingTags = `
+
+
+
+    const openingTags = `
       <!doctype html>
-         <html>
+         <html style="zoom:70%">
             <head>
                <meta charset="utf-8">
                <title>PDF Report Template</title>
@@ -81,7 +84,7 @@ module.exports = (testeeRecords, allStens) => {
                </style>
             </head>
          <body>`;
-   const staticScale = `
+    const staticScale = `
 
          <div style="margin-left:4vh; margin-right: 0vh"> 
             <table border="0" cellspacing="4" align="center" style="width:margin-top:0px">
@@ -127,44 +130,46 @@ module.exports = (testeeRecords, allStens) => {
          </div>
          <br/>
          `;
-   const closingTags = ` 
+    const closingTags = ` 
             </body>
          </html>`;
 
-   var body = ``;
-   var scoringTableTemplate = ``;
-   var candidateTestName = ``;
-   var testComment = ``;
-   var count = 1;
-   var averageTableTemplate = '';
-   var total = 0;
-   var countRecords = 0;
+    var body = ``;
+    var scoringTableTemplate = ``;
+    var candidateTestName = ``;
+    var testComment = ``;
+    var commenting = ``;
+    var count = 1;
+    var averageTableTemplate = '';
+    var total = 0;
+    var countRecords = 0;
 
-   testeeRecords.forEach(candidate => {
+    testeeRecords.forEach(candidate => {
 
-      let stenSum = 0; 
-      let itemsFound = 3;
-      var allStens = [];
-      let arry = [];
+        let stenSum = 0;
+        let itemsFound = 3;
+        var allStens = [];
+        let arry = [];
 
-      allStens = candidate.sten;
-   
-      var smallA = arry.push(candidate.sten);
-      
-      function calculateAverage(array) {
-         array.forEach(function (item, index) {
-            total = total + parseInt(item); // since item is of type 'any' , we need to convert it to parseInt so that it becomes an Integer
-            countRecords++;
-         });
+        allStens = candidate.sten;
 
-         var AverageSten = total / countRecords;
+        var smallA = arry.push(candidate.sten);
 
-         console.log(AverageSten); 
+        function calculateAverage(array) {
+            array.forEach(function(item, index) {
+                total = total + parseInt(item); // since item is of type 'any' , we need to convert it to parseInt so that it becomes an Integer
+                countRecords++;
+            });
 
-         return AverageSten;
-      }
+            var AverageSten = total / countRecords;
 
-      averageTableTemplate = `
+
+
+            return AverageSten;
+        }
+
+
+        averageTableTemplate = `
          <div style="margin-left:50px">
             <div align=center>
                <p style="font-family: Candara ; font-size:14px"><strong> Overall Cognitive Profile</strong></p>
@@ -225,22 +230,21 @@ module.exports = (testeeRecords, allStens) => {
                      break;
                }
             </script>
-   
-   
          `
-   })
+    })
 
-   testeeRecords.forEach(candidate => {
+    testeeRecords.forEach(candidate => {
 
-      scoringTableTemplate += `
-             <div style="margin-left:4vh; margin-right: 0vh; "> 
-                  <table border="0" cellspacing="4" align="center" style=" margin-botttom: 60vh;">
-                     <tr> <td id ="${count}cell0" height = "8" width="110"  style="font-size:7px;" style='border: none' align=center>
+        scoringTableTemplate += `
+             <div  id ="mytable" style="margin-left:4vh; margin-right: 0vh; "> 
+                  <table   border="0" cellspacing="4" align="center" style=" margin-botttom: 60vh;">
+                     <tr> 
+                        <td id ="${count}cell0" height = "8" width="110"  style="font-size:7px;" style='border: none' align=center>
                               ${candidate.testName}
-                          </td>
+                        </td>
                         <td > 
-                           <table border="1" cellspacing="0" style="border-color: #000000;">
-                              <tr>
+                           <table border="1" cellspacing="0" style="border-color: #000000;border-width:1px;">
+                              <tr  >
                                  
                                  <td  id ="${count}cell1" height = "20" width="34" bgcolor="red" style="font-size: 10px"         align=center> </td>
                                  <td  id ="${count}cell2" height = "20" width="34" bgcolor="red"  style="font-size: 10px"        align=center> </td>
@@ -277,19 +281,26 @@ module.exports = (testeeRecords, allStens) => {
                var cell9 = document.getElementById("${count}cell9");
                var cell10 = document.getElementById("${count}cell10");
                var cell11 = document.getElementById("${count}cell11");
-   
+               var comment = document.getElementById("${count}comment");
+               var mytable = document.getElementById("${count}mytable");
+            
+               
                switch(${candidate.sten}) {
+                  
                   case 1:
                      cell1 = document.getElementById("${count}cell1").innerHTML = "&diams;";
                      cell11 = document.getElementById("${count}cell11").innerHTML = "<p align='center'>Below Average</p>";
+                     
                      break;
                   case 2:
                      cell2 = document.getElementById("${count}cell2").innerHTML = "&diams;";
                      cell11 = document.getElementById("${count}cell11").innerHTML = "<p align='center'>Below Average</p>";
+                   
                      break;
                   case 3:
                      cell3 = document.getElementById("${count}cell3").innerHTML = "&diams;";
                      cell11 = document.getElementById("${count}cell11").innerHTML = "<p align='center'>Below Average</p>";
+                   
                      break;
                   case 4:
                      cell4 = document.getElementById("${count}cell4").innerHTML = "&diams;";
@@ -321,101 +332,54 @@ module.exports = (testeeRecords, allStens) => {
                      break;
                   
                   default:
-                     console.log("");
+                     var Table = document.getElementById("mytable").innerHTML = "";
                      break;
-               }
-            </script>`;
+               }  
+            </script>`
 
-            var getInitials = function (string) {
-               var initials = "";
-               var names = string.split(' ');
-               for (n = 0; n < names.length; n++) {
-                    initials += names[n].substring(0, 1).toUpperCase();
-                }
+        ;
 
-                return initials;
-            };
 
-            candidateTestName += `
+
+        // testeeRecords.forEach(candidate => {
+        //    if(candidate.candidate_id === row.candidate_id){
+        //    testeeRecords.push(candidate);
+        //    console.log(candidate.candidate_id);
+        //    }
+        // });
+
+
+
+        var getInitials = function(string) {
+            var initials = "";
+            var names = string.split(' ');
+            for (n = 0; n < names.length; n++) {
+                initials += names[n].substring(0, 1).toUpperCase();
+            }
+
+            return initials;
+        };
+
+        candidateTestName += `
+              
+
                <p id ="${count}p0" style="font-size:12px"> ${candidate.testName}</p>
                
-            `;
-
-            testComment += `
-            <script>
-            var p0 = document.getElementById("${count}p0");
-            var p1 = document.getElementById("${count}p1");
-            var p2 = document.getElementById("${count}p2");
-            var p3 = document.getElementById("${count}p3");
-            var p4 = document.getElementById("${count}p4");
-            var p5 = document.getElementById("${count}p5");
-            var p6 = document.getElementById("${count}p6");
-            var p7 = document.getElementById("${count}p7");
-            var p8 = document.getElementById("${count}p8");
-            var p9 = document.getElementById("${count}p9");
-            var p10 = document.getElementById("${count}p10");
-           
-
-            switch(${candidate.sten}) {
-               case 0:
-                  cell11 = document.getElementById("${count}cell11").innerHTML = "<p align='center'>Invalid Sten</p>";
-                  break;
-               case 1:
-                  p1 = document.getElementById("${count}cell1").innerHTML = "&diams;";
-                  cell11 = document.getElementById("${count}cell11").innerHTML = "<p align='center'>Below Average</p>";
-                  break;
-               case 2:
-                  cell2 = document.getElementById("${count}cell2").innerHTML = "&diams;";
-                  cell11 = document.getElementById("${count}cell11").innerHTML = "<p align='center'>Below Average</p>";
-                  break;
-               case 3:
-                  cell3 = document.getElementById("${count}cell3").innerHTML = "&diams;";
-                  cell11 = document.getElementById("${count}cell11").innerHTML = "<p align='center'>Below Average</p>";
-                  break;
-               case 4:
-                  cell4 = document.getElementById("${count}cell4").innerHTML = "&diams;";
-                  cell11 = document.getElementById("${count}cell11").innerHTML = "<p align='center'> Lower Average</p>";
-                  break;
-               case 5:
-                  cell5 = document.getElementById("${count}cell5").innerHTML = "&diams;";
-                  cell11 = document.getElementById("${count}cell11").innerHTML = " <p align='center'>Average</p>";
-                  break;
-               case 6:
-                  cell6 = document.getElementById("${count}cell6").innerHTML = "&diams;";
-                  cell11 = document.getElementById("${count}cell11").innerHTML = "<p align='center'>Average</p>";
-                  break;
-               case 7:
-                  cell7 = document.getElementById("${count}cell7").innerHTML = "&diams;";
-                  cell11 = document.getElementById("${count}cell11").innerHTML = "<p align='center'>Upper Average</p>";
-                  break;
-               case 8:
-                  cell8 = document.getElementById("${count}cell8").innerHTML = "&diams;";
-                  cell11 = document.getElementById("${count}cell11").innerHTML = "<p align='center'>Above Average</p>";
-                  break;
-               case 9:
-                  cell9 = document.getElementById("${count}cell9").innerHTML = "&diams;";
-                  cell11 = document.getElementById("${count}cell11").innerHTML = "<p align='center'>Above Average</p>";
-                  break;
-               case 10:
-                  cell10 = document.getElementById("${count}cell10").innerHTML = "&diams;";
-                  cell11 = document.getElementById("${count}cell11").innerHTML = "<p align='center'>Above Average</p>";
-                  break;
+              
                
-               default:
-                  cell11 = document.getElementById("${count}cell11").innerHTML = "<p align='center'>Invalid Sten</p>";
-                  break;
-            }
-         </script>
             `;
 
-            
-
-          body = `
-            
-            <div class="invoice-box" style="background-color: #f2f2f2; height: 340vh" style="margin-top:50px;">
+        testComment += `
 
             
-               <div style="background-color: #a8d08d; height: 340vh; width:5vh; margin-left:43vh;">
+            `;
+
+        body = `
+            
+            <div class="invoice-box" style="background-color: #f2f2f2; height: 300vh" style="margin-top:50px;">
+
+            
+               <div style="background-color: #a8d08d; height: 300vh; width:5vh; margin-left:30vh;">
                   
                   <div style="background-color: #8eaadb;height: 260vh; width:200vh;margin-left:5vh"> 
 
@@ -487,13 +451,8 @@ module.exports = (testeeRecords, allStens) => {
                         ${candidateTestName}
                         </td>
                         
-                        <td style="font-size:12px;font-family: Candara" >
+                        <td  style="font-size:12px;font-family: Candara" >  </td>
 
-                           <p  id="${count}p0" style="text-align:center"> Average</p>
-                           <p  id="${count}p0" style="text-align:center"> Lower Average</p>
-                           <p  id="${count}p0" style="text-align:center"> Above Average</p>
-
-                        </td>
                      </tr>
                      <tr height="30px">
                         <td style="font-size:12px;text-align:center"> <strong>Supervisory Competencies </strong></td>
@@ -612,12 +571,14 @@ module.exports = (testeeRecords, allStens) => {
             
       </div>
             <br />
-         `;
-      count++;
-   });
 
-   return openingTags + body +
-      `<div style="height: 2px"></div>
+            
+         `;
+        count++;
+    });
+
+    return openingTags + body +
+        `<div style="height: 2px"></div>
          <div style= "border: 1px solid black; width:200vh; margin-left:24vh;margin-right:60px "> 
             
             <div style="height: 6px; border: 0.5px solid black; text-align:center;font-size:11px;font-family: Candara; margin-bottom:1vh">General Reasoning Profile Chart </div>
@@ -625,7 +586,7 @@ module.exports = (testeeRecords, allStens) => {
             <div style="height: 1px;margin-right:60px"></div>
                ${staticScale + scoringTableTemplate}
                <p align="center" style="font-size:10px;font-family: Candara;"> <strong> Norms Used: Comparable Supervisory Level </strong> </p> 
-         </div>`  +
-      averageTableTemplate + closingTags;
+         </div>` +
+        averageTableTemplate + closingTags;
 
 };

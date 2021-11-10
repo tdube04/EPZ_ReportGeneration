@@ -1,4 +1,5 @@
 import React from "react";
+
 import {
   AppBar,
   Toolbar,
@@ -6,16 +7,13 @@ import {
   Typography,
   makeStyles,
 } from "@material-ui/core";
-import logo from './images/logo.jpg'; 
-
-import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   navlinks: {
     marginLeft: theme.spacing(10),
     display: "flex",
   },
- logo: {
+  logo: {
     flexGrow: "1",
     cursor: "pointer",
   },
@@ -35,21 +33,16 @@ function Navbar() {
   const classes = useStyles();
 
   return (
-    <AppBar position="static" top= "0">
+    <AppBar position="static" top="0">
       <CssBaseline />
       <Toolbar>
-      
         <Typography variant="h4" className={classes.logo}>
-                Candidate list 
-                {/* <img src={logo} alt="this is car image" width={182} height={60}  /> */}
-
-               
-        </Typography>
-          <div className={classes.navlinks}>
+          Candidate list{" "}
+          {/* <img src={logo} alt="this is car image" width={182} height={60}  /> */}
           
-          
-          </div>
-      </Toolbar>
+        </Typography>{" "}
+        <div className={classes.navlinks}></div>{" "}
+      </Toolbar>{" "}
     </AppBar>
   );
 }

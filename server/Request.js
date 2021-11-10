@@ -1,6 +1,6 @@
 const request = require('request');
- 
-_EXTERNAL_URL = 'http://epzglobal.com/restapi/api/items.json';
+ http://epzglobal.com/restapi/api/items.json
+_EXTERNAL_URL = '';
 
 const callExternalApiUsingRequest = (callback) => {
     request(_EXTERNAL_URL, { json: true }, (err, res, body) => {
