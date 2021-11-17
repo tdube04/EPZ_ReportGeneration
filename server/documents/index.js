@@ -1,11 +1,8 @@
 // module.exports = ({ date_taken, testeeName, testName,attempts, score,sten,percentile} )=> {
 module.exports = (testeeRecords, allStens) => {
-    const today = new Date();
+  const today = new Date();
 
-
-
-
-    const openingTags = `
+  const openingTags = `
       <!doctype html>
          <html style="zoom:70%">
             <head>
@@ -84,7 +81,7 @@ module.exports = (testeeRecords, allStens) => {
                </style>
             </head>
          <body>`;
-    const staticScale = `
+  const staticScale = `
 
          <div style="margin-left:4vh; margin-right: 0vh"> 
             <table border="0" cellspacing="4" align="center" style="width:margin-top:0px">
@@ -130,46 +127,42 @@ module.exports = (testeeRecords, allStens) => {
          </div>
          <br/>
          `;
-    const closingTags = ` 
+  const closingTags = ` 
             </body>
          </html>`;
 
-    var body = ``;
-    var scoringTableTemplate = ``;
-    var candidateTestName = ``;
-    var testComment = ``;
-    var commenting = ``;
-    var count = 1;
-    var averageTableTemplate = '';
-    var total = 0;
-    var countRecords = 0;
+  var body = ``;
+  var scoringTableTemplate = ``;
+  var candidateTestName = ``;
+  var testComment = ``;
+  var commenting = ``;
+  var count = 1;
+  var averageTableTemplate = "";
+  var total = 0;
+  var countRecords = 0;
 
-    testeeRecords.forEach(candidate => {
+  testeeRecords.forEach((candidate) => {
+    let stenSum = 0;
+    let itemsFound = 3;
+    var allStens = [];
+    let arry = [];
 
-        let stenSum = 0;
-        let itemsFound = 3;
-        var allStens = [];
-        let arry = [];
+    allStens = candidate.sten;
 
-        allStens = candidate.sten;
+    var smallA = arry.push(candidate.sten);
 
-        var smallA = arry.push(candidate.sten);
+    function calculateAverage(array) {
+      array.forEach(function (item, index) {
+        total = total + parseInt(item); // since item is of type 'any' , we need to convert it to parseInt so that it becomes an Integer
+        countRecords++;
+      });
 
-        function calculateAverage(array) {
-            array.forEach(function(item, index) {
-                total = total + parseInt(item); // since item is of type 'any' , we need to convert it to parseInt so that it becomes an Integer
-                countRecords++;
-            });
+      var AverageSten = total / countRecords;
 
-            var AverageSten = total / countRecords;
+      return AverageSten;
+    }
 
-
-
-            return AverageSten;
-        }
-
-
-        averageTableTemplate = `
+    averageTableTemplate = `
          <div style="margin-left:50px">
             <div align=center>
                <p style="font-family: Candara ; font-size:14px"><strong> Overall Cognitive Profile</strong></p>
@@ -230,12 +223,11 @@ module.exports = (testeeRecords, allStens) => {
                      break;
                }
             </script>
-         `
-    })
+         `;
+  });
 
-    testeeRecords.forEach(candidate => {
-
-        scoringTableTemplate += `
+  testeeRecords.forEach((candidate) => {
+    scoringTableTemplate += `
              <div  id ="mytable" style="margin-left:4vh; margin-right: 0vh; "> 
                   <table   border="0" cellspacing="4" align="center" style=" margin-botttom: 60vh;">
                      <tr> 
@@ -243,8 +235,8 @@ module.exports = (testeeRecords, allStens) => {
                               ${candidate.testName}
                         </td>
                         <td > 
-                           <table border="1" cellspacing="0" style="border-color: #000000;border-width:1px;">
-                              <tr  >
+                           <table border="1" cellspacing="0" style="border-color: #000000; border-width:1px;">
+                              <tr>
                                  
                                  <td  id ="${count}cell1" height = "20" width="34" bgcolor="red" style="font-size: 10px"         align=center> </td>
                                  <td  id ="${count}cell2" height = "20" width="34" bgcolor="red"  style="font-size: 10px"        align=center> </td>
@@ -335,32 +327,26 @@ module.exports = (testeeRecords, allStens) => {
                      var Table = document.getElementById("mytable").innerHTML = "";
                      break;
                }  
-            </script>`
+            </script>`;
 
-        ;
+    // testeeRecords.forEach(candidate => {
+    //    if(candidate.candidate_id === row.candidate_id){
+    //    testeeRecords.push(candidate);
+    //    console.log(candidate.candidate_id);
+    //    }
+    // });
 
+    var getInitials = function (string) {
+      var initials = "";
+      var names = string.split(" ");
+      for (n = 0; n < names.length; n++) {
+        initials += names[n].substring(0, 1).toUpperCase();
+      }
 
+      return initials;
+    };
 
-        // testeeRecords.forEach(candidate => {
-        //    if(candidate.candidate_id === row.candidate_id){
-        //    testeeRecords.push(candidate);
-        //    console.log(candidate.candidate_id);
-        //    }
-        // });
-
-
-
-        var getInitials = function(string) {
-            var initials = "";
-            var names = string.split(' ');
-            for (n = 0; n < names.length; n++) {
-                initials += names[n].substring(0, 1).toUpperCase();
-            }
-
-            return initials;
-        };
-
-        candidateTestName += `
+    candidateTestName += `
               
 
                <p id ="${count}p0" style="font-size:12px"> ${candidate.testName}</p>
@@ -369,29 +355,30 @@ module.exports = (testeeRecords, allStens) => {
                
             `;
 
-        testComment += `
+    testComment += `
 
             
             `;
 
-        body = `
+    body = `
             
-            <div class="invoice-box" style="background-color: #f2f2f2; height: 300vh" style="margin-top:50px;">
-
-            
-               <div style="background-color: #a8d08d; height: 300vh; width:5vh; margin-left:30vh;">
-                  
-                  <div style="background-color: #8eaadb;height: 260vh; width:200vh;margin-left:5vh"> 
+         <div class="invoice-box" style="background-color: #f2f2f2; height: 300vh" style="margin-top:50px;">
+            <div style="background-color: #a8d08d; height: 300vh; width:5vh; margin-left:30vh;"> 
+               <div style="background-color: #8eaadb;height: 260vh; width:200vh;margin-left:5vh"> 
 
                   <div style="background-color: #1f4e79; height: 37vh; width:200vh">
                      <br style="line-height: 200%"/>
                      <h2 style="text-align:absolute; color: white; font-size:22px; font-family: Candara">CONFIDENTIAL PSYCHOMETRIC REPORT</h2>
                   </div>
                   <div style="margin-top:70px">
-                     <strong><p style="font-family: Candara"> Name of Candidate: ${candidate.testeeName} (${getInitials(candidate.testeeName)}) </p>  </strong>
+                     <strong><p style="font-family: Candara"> Name of Candidate: ${
+                       candidate.testeeName
+                     } (${getInitials(candidate.testeeName)}) </p>  </strong>
                      <strong><p style="font-family: Candara; margin-top:40px">Position : Position  </p></strong>
                      <strong><p style="font-family: Candara; margin-top:40px">Company : Company Name</p> </strong>
-                     <strong><p style="font-family: Candara; margin-top:40px"> Date : ${candidate.date_taken} </p>  </strong>
+                     <strong><p style="font-family: Candara; margin-top:40px"> Date : ${
+                       candidate.date_taken
+                     } </p>  </strong>
                   </div>
                   <div style="margin-left: 0vh; font-family: Candara; margin-top:410px">
                      <p style="font-size:11px">The contents of this report are highly confidential 
@@ -413,19 +400,15 @@ module.exports = (testeeRecords, allStens) => {
                         <img  src="https://cdn.pixabay.com/photo/2021/10/01/10/26/10-26-36-762_150.jpg"
                            style="width:100%;height:15vh;position:absolute; max-width:156px;margin-left:10px;">
                      </a>
-               </div>
-                 
-                    
-                  </div>
-                  
-            </div>
+               </div>   
+            </div>    
          </div>
+      </div>
                
                <br />
 
             </div>
-            <div style="height: 16vh">
-            </div>
+            <div style="height: 16vh"> </div>
             <div style="margin-left: 24vh; font-family: Candara" >
                
               <div style="width:200vh; font-family: Candara;">
@@ -574,11 +557,13 @@ module.exports = (testeeRecords, allStens) => {
 
             
          `;
-        count++;
-    });
+    count++;
+  });
 
-    return openingTags + body +
-        `<div style="height: 2px"></div>
+  return (
+    openingTags +
+    body +
+    `<div style="height: 2px"></div>
          <div style= "border: 1px solid black; width:200vh; margin-left:24vh;margin-right:60px "> 
             
             <div style="height: 6px; border: 0.5px solid black; text-align:center;font-size:11px;font-family: Candara; margin-bottom:1vh">General Reasoning Profile Chart </div>
@@ -587,6 +572,7 @@ module.exports = (testeeRecords, allStens) => {
                ${staticScale + scoringTableTemplate}
                <p align="center" style="font-size:10px;font-family: Candara;"> <strong> Norms Used: Comparable Supervisory Level </strong> </p> 
          </div>` +
-        averageTableTemplate + closingTags;
-
+    averageTableTemplate +
+    closingTags
+  );
 };

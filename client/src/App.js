@@ -3,6 +3,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import axios from "axios";
 import { saveAs } from "file-saver";
 import Navbar from "./Navbar";
+import Download from "./Download";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import { makeStyles } from "@material-ui/core/styles";
@@ -70,7 +71,7 @@ class App extends Component {
   };
 
   async componentDidMount() {
-    const url = "/request";
+    const url = "/items";
     const response = await fetch(url);
     const data = await response.json();
     this.setState({ candidates: data, loading: false });
@@ -104,6 +105,7 @@ class App extends Component {
       }
     });
 
+
     this.setState({ testeeRecords: testeeRecords }, function() {
       this.createAndDownloadPdf();
     });
@@ -116,7 +118,8 @@ class App extends Component {
       .then((res) => {
         const pdfBlob = new Blob([res.data], { type: "application/pdf" });
         console.log(this.state.testeeRecords);
-        saveAs(pdfBlob);
+        const fileName = this.state.testeeRecords[1].testeeName;
+        saveAs(pdfBlob,fileName);
       });
   };
 
@@ -232,12 +235,16 @@ class App extends Component {
                 render: (rowData) => (
                   <GetAppIcon
                     tooltip="Download Report"
-                    onClick={this.clickMe.bind(this, rowData)}
+                    onClick={this.clickMe.bind(this, rowData) }
                     id={"col2-" + rowData.candidate_id}
                     key={"col2-" + rowData.candidate_id}
+                    
+
                   />
+                  
                 ),
               },
+              
             ]}
             data={this.state.candidates}
             parentChildData={(row, rows) =>

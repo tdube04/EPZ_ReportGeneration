@@ -13,7 +13,7 @@ const models = require('./items_model');
 const repo = require('./repository');
 const { userInfo } = require('./fetchUser')
 
-const pdfTemplate = require('./documents');
+const pdfTemplate = require('./documents'); // html template code
 
 const app = express();
 dotenv.config();
@@ -49,7 +49,7 @@ app.post('/create-pdf', (req, res) => {
 });
 
 app.get('/items', (req, res) => {
-    res.send(models.filtered());
+    res.send(models.loadItem());
 
 
 });
